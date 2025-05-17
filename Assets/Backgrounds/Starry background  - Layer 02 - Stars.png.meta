@@ -1,0 +1,843 @@
+fileFormatVersion: 2
+guid: dbbc7a66c5737244fb6c3700eac4852f
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 1874761410564854885
+    second: Starry background  - Layer 02 - Stars_0
+  - first:
+      213: -2372067751884796913
+    second: Starry background  - Layer 02 - Stars_1
+  - first:
+      213: 6107937111565199452
+    second: Starry background  - Layer 02 - Stars_2
+  - first:
+      213: -8755455690366938121
+    second: Starry background  - Layer 02 - Stars_3
+  - first:
+      213: -1292750734094937864
+    second: Starry background  - Layer 02 - Stars_4
+  - first:
+      213: 801214031913915690
+    second: Starry background  - Layer 02 - Stars_5
+  - first:
+      213: 5301151168042652823
+    second: Starry background  - Layer 02 - Stars_6
+  - first:
+      213: -5421686018522393393
+    second: Starry background  - Layer 02 - Stars_7
+  - first:
+      213: 7909871614750112940
+    second: Starry background  - Layer 02 - Stars_8
+  - first:
+      213: -7493854811010727957
+    second: Starry background  - Layer 02 - Stars_9
+  - first:
+      213: -2747483106901176715
+    second: Starry background  - Layer 02 - Stars_10
+  - first:
+      213: 8922383864246517661
+    second: Starry background  - Layer 02 - Stars_11
+  - first:
+      213: 1351105331118473323
+    second: Starry background  - Layer 02 - Stars_12
+  - first:
+      213: 4640774839773581739
+    second: Starry background  - Layer 02 - Stars_13
+  - first:
+      213: -1322585119485251084
+    second: Starry background  - Layer 02 - Stars_14
+  - first:
+      213: 1381809712807758699
+    second: Starry background  - Layer 02 - Stars_15
+  - first:
+      213: -4957629260056580851
+    second: Starry background  - Layer 02 - Stars_16
+  - first:
+      213: -949324385951023763
+    second: Starry background  - Layer 02 - Stars_17
+  - first:
+      213: -70472278938054105
+    second: Starry background  - Layer 02 - Stars_18
+  - first:
+      213: 7068858671007384842
+    second: Starry background  - Layer 02 - Stars_19
+  - first:
+      213: -7550454921764907170
+    second: Starry background  - Layer 02 - Stars_20
+  - first:
+      213: -5591519325808524252
+    second: Starry background  - Layer 02 - Stars_21
+  - first:
+      213: -8141059931161148707
+    second: Starry background  - Layer 02 - Stars_22
+  - first:
+      213: -3097396492272581438
+    second: Starry background  - Layer 02 - Stars_23
+  - first:
+      213: 5249091827564762819
+    second: Starry background  - Layer 02 - Stars_24
+  - first:
+      213: 3215780009573497597
+    second: Starry background  - Layer 02 - Stars_25
+  - first:
+      213: -3601000095301745007
+    second: Starry background  - Layer 02 - Stars_26
+  - first:
+      213: 509299243102714332
+    second: Starry background  - Layer 02 - Stars_27
+  - first:
+      213: 3264705397381555364
+    second: Starry background  - Layer 02 - Stars_28
+  - first:
+      213: 1891168853917647686
+    second: Starry background  - Layer 02 - Stars_29
+  - first:
+      213: -7345405436743602251
+    second: Starry background  - Layer 02 - Stars_30
+  - first:
+      213: 3821265782774837129
+    second: Starry background  - Layer 02 - Stars_31
+  - first:
+      213: 912239073324052810
+    second: Starry background  - Layer 02 - Stars_32
+  - first:
+      213: 1088994643121036727
+    second: Starry background  - Layer 02 - Stars_33
+  - first:
+      213: 4274419341193674336
+    second: Starry background  - Layer 02 - Stars_34
+  - first:
+      213: -8224679475786124060
+    second: Starry background  - Layer 02 - Stars_35
+  - first:
+      213: 341200643996252073
+    second: Starry background  - Layer 02 - Stars_36
+  - first:
+      213: -73357970874018968
+    second: Starry background  - Layer 02 - Stars_37
+  - first:
+      213: -2025831777676645180
+    second: Starry background  - Layer 02 - Stars_38
+  - first:
+      213: 5677245376716309909
+    second: Starry background  - Layer 02 - Stars_39
+  - first:
+      213: 519786307571829082
+    second: Starry background  - Layer 02 - Stars_40
+  - first:
+      213: 4832730356062717923
+    second: Starry background  - Layer 02 - Stars_41
+  - first:
+      213: 9038009817005492890
+    second: Starry background  - Layer 02 - Stars_42
+  - first:
+      213: -9153133154489412513
+    second: Starry background  - Layer 02 - Stars_43
+  - first:
+      213: 6667280231571227397
+    second: Starry background  - Layer 02 - Stars_44
+  - first:
+      213: -3409398264321766013
+    second: Starry background  - Layer 02 - Stars_45
+  - first:
+      213: -5127682064232286337
+    second: Starry background  - Layer 02 - Stars_46
+  - first:
+      213: -7253138038306357797
+    second: Starry background  - Layer 02 - Stars_47
+  - first:
+      213: -8245917249281375176
+    second: Starry background  - Layer 02 - Stars_48
+  - first:
+      213: 20067798316853526
+    second: Starry background  - Layer 02 - Stars_49
+  - first:
+      213: 8395414110458865102
+    second: Starry background  - Layer 02 - Stars_50
+  - first:
+      213: 3806260932583445817
+    second: Starry background  - Layer 02 - Stars_51
+  - first:
+      213: 7866959042126197213
+    second: Starry background  - Layer 02 - Stars_52
+  - first:
+      213: 898723366550175085
+    second: Starry background  - Layer 02 - Stars_53
+  - first:
+      213: 4074333207965443223
+    second: Starry background  - Layer 02 - Stars_54
+  - first:
+      213: 6893185559638867504
+    second: Starry background  - Layer 02 - Stars_55
+  - first:
+      213: -3976047534206504269
+    second: Starry background  - Layer 02 - Stars_56
+  - first:
+      213: 998342272359474461
+    second: Starry background  - Layer 02 - Stars_57
+  - first:
+      213: 2341018996457433441
+    second: Starry background  - Layer 02 - Stars_58
+  - first:
+      213: -4988730674566641711
+    second: Starry background  - Layer 02 - Stars_59
+  - first:
+      213: -7601217706212581495
+    second: Starry background  - Layer 02 - Stars_60
+  - first:
+      213: -3658572178026407731
+    second: Starry background  - Layer 02 - Stars_61
+  - first:
+      213: 2536237910550437171
+    second: Starry background  - Layer 02 - Stars_62
+  - first:
+      213: -779214690161062203
+    second: Starry background  - Layer 02 - Stars_63
+  - first:
+      213: -2426164421170333027
+    second: Starry background  - Layer 02 - Stars_64
+  - first:
+      213: 6692923399435505018
+    second: Starry background  - Layer 02 - Stars_65
+  - first:
+      213: -5110636494581628133
+    second: Starry background  - Layer 02 - Stars_66
+  - first:
+      213: 3270786108885205688
+    second: Starry background  - Layer 02 - Stars_67
+  - first:
+      213: -2796127586268838162
+    second: Starry background  - Layer 02 - Stars_68
+  - first:
+      213: 1603091329449399313
+    second: Starry background  - Layer 02 - Stars_69
+  - first:
+      213: 2679299571298951060
+    second: Starry background  - Layer 02 - Stars_70
+  - first:
+      213: 9019254824112315888
+    second: Starry background  - Layer 02 - Stars_71
+  - first:
+      213: -7984813783970702532
+    second: Starry background  - Layer 02 - Stars_72
+  - first:
+      213: -4398557333475732980
+    second: Starry background  - Layer 02 - Stars_73
+  - first:
+      213: -8085151532348159614
+    second: Starry background  - Layer 02 - Stars_74
+  - first:
+      213: -693907685902380799
+    second: Starry background  - Layer 02 - Stars_75
+  - first:
+      213: 6488390321358663947
+    second: Starry background  - Layer 02 - Stars_76
+  - first:
+      213: 8745062531345233347
+    second: Starry background  - Layer 02 - Stars_77
+  - first:
+      213: -6074976892634775249
+    second: Starry background  - Layer 02 - Stars_78
+  - first:
+      213: 6214672650226671629
+    second: Starry background  - Layer 02 - Stars_79
+  - first:
+      213: 2989468873111526325
+    second: Starry background  - Layer 02 - Stars_80
+  - first:
+      213: 2140747307365164607
+    second: Starry background  - Layer 02 - Stars_81
+  - first:
+      213: -7581419940917461648
+    second: Starry background  - Layer 02 - Stars_82
+  - first:
+      213: 2968234417151405125
+    second: Starry background  - Layer 02 - Stars_83
+  - first:
+      213: 131567025182966695
+    second: Starry background  - Layer 02 - Stars_84
+  - first:
+      213: -6661227436495944578
+    second: Starry background  - Layer 02 - Stars_85
+  - first:
+      213: -3962694909073175413
+    second: Starry background  - Layer 02 - Stars_86
+  - first:
+      213: -4680455912375089903
+    second: Starry background  - Layer 02 - Stars_87
+  - first:
+      213: -1777826693102628732
+    second: Starry background  - Layer 02 - Stars_88
+  - first:
+      213: -6789714797466878464
+    second: Starry background  - Layer 02 - Stars_89
+  - first:
+      213: 8265352358899052568
+    second: Starry background  - Layer 02 - Stars_90
+  - first:
+      213: -3744702867470794010
+    second: Starry background  - Layer 02 - Stars_91
+  - first:
+      213: -8627204557475300238
+    second: Starry background  - Layer 02 - Stars_92
+  - first:
+      213: 8666056660480922715
+    second: Starry background  - Layer 02 - Stars_93
+  - first:
+      213: -7361605928708708840
+    second: Starry background  - Layer 02 - Stars_94
+  - first:
+      213: -3504809634997985078
+    second: Starry background  - Layer 02 - Stars_95
+  - first:
+      213: -1159320097420033958
+    second: Starry background  - Layer 02 - Stars_96
+  - first:
+      213: -6349558357509488496
+    second: Starry background  - Layer 02 - Stars_97
+  - first:
+      213: -904369168046666100
+    second: Starry background  - Layer 02 - Stars_98
+  - first:
+      213: -4249065552284091360
+    second: Starry background  - Layer 02 - Stars_99
+  - first:
+      213: 6293046084839452803
+    second: Starry background  - Layer 02 - Stars_100
+  - first:
+      213: -4149142257625592741
+    second: Starry background  - Layer 02 - Stars_101
+  - first:
+      213: 5565483372246491816
+    second: Starry background  - Layer 02 - Stars_102
+  - first:
+      213: 4236835275887931685
+    second: Starry background  - Layer 02 - Stars_103
+  - first:
+      213: 2949614039874003305
+    second: Starry background  - Layer 02 - Stars_104
+  - first:
+      213: 7906172116716710710
+    second: Starry background  - Layer 02 - Stars_105
+  - first:
+      213: 5568870297907020803
+    second: Starry background  - Layer 02 - Stars_106
+  - first:
+      213: 6708414560764440138
+    second: Starry background  - Layer 02 - Stars_107
+  - first:
+      213: -2546401213804367748
+    second: Starry background  - Layer 02 - Stars_108
+  - first:
+      213: -2294290592192775922
+    second: Starry background  - Layer 02 - Stars_109
+  - first:
+      213: 3250422286855897067
+    second: Starry background  - Layer 02 - Stars_110
+  - first:
+      213: 3402972917218331692
+    second: Starry background  - Layer 02 - Stars_111
+  - first:
+      213: 1555504007794682213
+    second: Starry background  - Layer 02 - Stars_112
+  - first:
+      213: 2746115950042663348
+    second: Starry background  - Layer 02 - Stars_113
+  - first:
+      213: 435583756706342380
+    second: Starry background  - Layer 02 - Stars_114
+  - first:
+      213: -3447884870361630590
+    second: Starry background  - Layer 02 - Stars_115
+  - first:
+      213: 2991219648114730488
+    second: Starry background  - Layer 02 - Stars_116
+  - first:
+      213: 7640300569505584679
+    second: Starry background  - Layer 02 - Stars_117
+  - first:
+      213: 8989295699845836096
+    second: Starry background  - Layer 02 - Stars_118
+  - first:
+      213: 5147250973249969089
+    second: Starry background  - Layer 02 - Stars_119
+  - first:
+      213: -3763694755935050398
+    second: Starry background  - Layer 02 - Stars_120
+  - first:
+      213: -2190172047371973681
+    second: Starry background  - Layer 02 - Stars_121
+  - first:
+      213: 4125921121997572547
+    second: Starry background  - Layer 02 - Stars_122
+  - first:
+      213: 8868694966631905729
+    second: Starry background  - Layer 02 - Stars_123
+  - first:
+      213: 461553834775006861
+    second: Starry background  - Layer 02 - Stars_124
+  - first:
+      213: 4045825303484984640
+    second: Starry background  - Layer 02 - Stars_125
+  - first:
+      213: -5233821810754249003
+    second: Starry background  - Layer 02 - Stars_126
+  - first:
+      213: 5390506088674312713
+    second: Starry background  - Layer 02 - Stars_127
+  - first:
+      213: -994301563597213850
+    second: Starry background  - Layer 02 - Stars_128
+  - first:
+      213: 5374140423058912553
+    second: Starry background  - Layer 02 - Stars_129
+  - first:
+      213: 647949047173577019
+    second: Starry background  - Layer 02 - Stars_130
+  - first:
+      213: 2466557592251606771
+    second: Starry background  - Layer 02 - Stars_131
+  - first:
+      213: 2945806946244392456
+    second: Starry background  - Layer 02 - Stars_132
+  - first:
+      213: 2406355707815245854
+    second: Starry background  - Layer 02 - Stars_133
+  - first:
+      213: 2797894481336934104
+    second: Starry background  - Layer 02 - Stars_134
+  - first:
+      213: 5794646143186904269
+    second: Starry background  - Layer 02 - Stars_135
+  - first:
+      213: 4149909148758110597
+    second: Starry background  - Layer 02 - Stars_136
+  - first:
+      213: -868132394443570400
+    second: Starry background  - Layer 02 - Stars_137
+  - first:
+      213: -1414117781858840900
+    second: Starry background  - Layer 02 - Stars_138
+  - first:
+      213: 549891209342069554
+    second: Starry background  - Layer 02 - Stars_139
+  - first:
+      213: 7920260277784552169
+    second: Starry background  - Layer 02 - Stars_140
+  - first:
+      213: -21376537227246873
+    second: Starry background  - Layer 02 - Stars_141
+  - first:
+      213: -6144748755861203556
+    second: Starry background  - Layer 02 - Stars_142
+  - first:
+      213: 3367727011072063594
+    second: Starry background  - Layer 02 - Stars_143
+  - first:
+      213: -8731205266321101631
+    second: Starry background  - Layer 02 - Stars_144
+  - first:
+      213: 4292645666823073782
+    second: Starry background  - Layer 02 - Stars_145
+  - first:
+      213: 1240032783706301292
+    second: Starry background  - Layer 02 - Stars_146
+  - first:
+      213: 5212355340908548097
+    second: Starry background  - Layer 02 - Stars_147
+  - first:
+      213: 3284101699520095492
+    second: Starry background  - Layer 02 - Stars_148
+  - first:
+      213: 8179333718603970340
+    second: Starry background  - Layer 02 - Stars_149
+  - first:
+      213: 8439812313002152649
+    second: Starry background  - Layer 02 - Stars_150
+  - first:
+      213: 1949382210907665020
+    second: Starry background  - Layer 02 - Stars_151
+  - first:
+      213: -3475303131916312136
+    second: Starry background  - Layer 02 - Stars_152
+  - first:
+      213: 428720118054412077
+    second: Starry background  - Layer 02 - Stars_153
+  - first:
+      213: -1519529557384474880
+    second: Starry background  - Layer 02 - Stars_154
+  - first:
+      213: -7193448146810765879
+    second: Starry background  - Layer 02 - Stars_155
+  - first:
+      213: 557309527508037735
+    second: Starry background  - Layer 02 - Stars_156
+  - first:
+      213: -5611805774848980814
+    second: Starry background  - Layer 02 - Stars_157
+  - first:
+      213: -1694329423606634300
+    second: Starry background  - Layer 02 - Stars_158
+  - first:
+      213: 4969180086267465223
+    second: Starry background  - Layer 02 - Stars_159
+  - first:
+      213: 6486566780032360142
+    second: Starry background  - Layer 02 - Stars_160
+  - first:
+      213: 82076783141171782
+    second: Starry background  - Layer 02 - Stars_161
+  - first:
+      213: 4611175243035525689
+    second: Starry background  - Layer 02 - Stars_162
+  - first:
+      213: 8868939989917352728
+    second: Starry background  - Layer 02 - Stars_163
+  - first:
+      213: 3509314123307150794
+    second: Starry background  - Layer 02 - Stars_164
+  - first:
+      213: 8038745683899979260
+    second: Starry background  - Layer 02 - Stars_165
+  - first:
+      213: -7777555355513777279
+    second: Starry background  - Layer 02 - Stars_166
+  - first:
+      213: 1796840147331981735
+    second: Starry background  - Layer 02 - Stars_167
+  - first:
+      213: -4363848189207145926
+    second: Starry background  - Layer 02 - Stars_168
+  - first:
+      213: 2432437668264500337
+    second: Starry background  - Layer 02 - Stars_169
+  - first:
+      213: -3834993789495078825
+    second: Starry background  - Layer 02 - Stars_170
+  - first:
+      213: -1941776503273448618
+    second: Starry background  - Layer 02 - Stars_171
+  - first:
+      213: 4175563099561699251
+    second: Starry background  - Layer 02 - Stars_172
+  - first:
+      213: -3793787991245211744
+    second: Starry background  - Layer 02 - Stars_173
+  - first:
+      213: 8332742640699994637
+    second: Starry background  - Layer 02 - Stars_174
+  - first:
+      213: -1709393965732649698
+    second: Starry background  - Layer 02 - Stars_175
+  - first:
+      213: -1327216256019761397
+    second: Starry background  - Layer 02 - Stars_176
+  - first:
+      213: -4577354687374866250
+    second: Starry background  - Layer 02 - Stars_177
+  - first:
+      213: 784218229478912505
+    second: Starry background  - Layer 02 - Stars_178
+  - first:
+      213: -4225062740130701811
+    second: Starry background  - Layer 02 - Stars_179
+  - first:
+      213: 8080950188831045626
+    second: Starry background  - Layer 02 - Stars_180
+  - first:
+      213: 8068837047922549376
+    second: Starry background  - Layer 02 - Stars_181
+  - first:
+      213: 6696577582376772743
+    second: Starry background  - Layer 02 - Stars_182
+  - first:
+      213: -5216084742300600937
+    second: Starry background  - Layer 02 - Stars_183
+  - first:
+      213: 8793253109086634085
+    second: Starry background  - Layer 02 - Stars_184
+  - first:
+      213: 1857693881972744357
+    second: Starry background  - Layer 02 - Stars_185
+  - first:
+      213: -646148981186004503
+    second: Starry background  - Layer 02 - Stars_186
+  - first:
+      213: 8159936984222153191
+    second: Starry background  - Layer 02 - Stars_187
+  - first:
+      213: 261118894131959605
+    second: Starry background  - Layer 02 - Stars_188
+  - first:
+      213: 6234332107601595900
+    second: Starry background  - Layer 02 - Stars_189
+  - first:
+      213: -7993812446692014260
+    second: Starry background  - Layer 02 - Stars_190
+  - first:
+      213: 1416728627845425441
+    second: Starry background  - Layer 02 - Stars_191
+  - first:
+      213: -8117930014135173014
+    second: Starry background  - Layer 02 - Stars_192
+  - first:
+      213: 3112327131054863547
+    second: Starry background  - Layer 02 - Stars_193
+  - first:
+      213: 1405377294557743986
+    second: Starry background  - Layer 02 - Stars_194
+  - first:
+      213: -599140099871251583
+    second: Starry background  - Layer 02 - Stars_195
+  - first:
+      213: -7653065416655309482
+    second: Starry background  - Layer 02 - Stars_196
+  - first:
+      213: 7646315840826454697
+    second: Starry background  - Layer 02 - Stars_197
+  - first:
+      213: -8422772118191340649
+    second: Starry background  - Layer 02 - Stars_198
+  - first:
+      213: 7000555441264737722
+    second: Starry background  - Layer 02 - Stars_199
+  - first:
+      213: -4273194633524298753
+    second: Starry background  - Layer 02 - Stars_200
+  - first:
+      213: 193753887187904663
+    second: Starry background  - Layer 02 - Stars_201
+  - first:
+      213: -3814079442623101207
+    second: Starry background  - Layer 02 - Stars_202
+  - first:
+      213: 5270175059578572612
+    second: Starry background  - Layer 02 - Stars_203
+  - first:
+      213: 2722672576866025584
+    second: Starry background  - Layer 02 - Stars_204
+  - first:
+      213: -8260444157717548916
+    second: Starry background  - Layer 02 - Stars_205
+  - first:
+      213: -5708809532348372918
+    second: Starry background  - Layer 02 - Stars_206
+  - first:
+      213: -8143623221655510200
+    second: Starry background  - Layer 02 - Stars_207
+  - first:
+      213: 8365836261166094691
+    second: Starry background  - Layer 02 - Stars_208
+  - first:
+      213: -2847007882158218688
+    second: Starry background  - Layer 02 - Stars_209
+  - first:
+      213: -8258992534858971927
+    second: Starry background  - Layer 02 - Stars_210
+  - first:
+      213: -7887046873570914306
+    second: Starry background  - Layer 02 - Stars_211
+  - first:
+      213: -7360000633116392384
+    second: Starry background  - Layer 02 - Stars_212
+  - first:
+      213: 5770642603920038659
+    second: Starry background  - Layer 02 - Stars_213
+  - first:
+      213: -7924197942627030735
+    second: Starry background  - Layer 02 - Stars_214
+  - first:
+      213: 3262709301499055714
+    second: Starry background  - Layer 02 - Stars_215
+  - first:
+      213: 8873512792907771496
+    second: Starry background  - Layer 02 - Stars_216
+  - first:
+      213: -5442601185892273509
+    second: Starry background  - Layer 02 - Stars_217
+  - first:
+      213: -8102101177330267734
+    second: Starry background  - Layer 02 - Stars_218
+  - first:
+      213: -3168295429734007588
+    second: Starry background  - Layer 02 - Stars_219
+  - first:
+      213: -388041233858094331
+    second: Starry background  - Layer 02 - Stars_220
+  - first:
+      213: -8679659921500350036
+    second: Starry background  - Layer 02 - Stars_221
+  - first:
+      213: -7878073611746737315
+    second: Starry background  - Layer 02 - Stars_222
+  - first:
+      213: -1097335598229715576
+    second: Starry background  - Layer 02 - Stars_223
+  - first:
+      213: 1981723662882080494
+    second: Starry background  - Layer 02 - Stars_224
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 60
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Starry background  - Layer 02 - Stars_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 5760
+        height: 360
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eda431aa768bb2744b4ac6fd169a1414
+      internalID: 115477284
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 486de09f95594cb41958fed9ab35efb8
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":5760.0,"y":360.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"autoSlicingMethod":0,"spriteAlignment":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      Starry background  - Layer 02 - Stars_0: 115477284
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
