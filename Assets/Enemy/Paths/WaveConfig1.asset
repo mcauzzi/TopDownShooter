@@ -12,5 +12,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b424deeaf43597f49bcb9d7eb39b82a9, type: 3}
   m_Name: WaveConfig1
   m_EditorClassIdentifier: 
+  enemyPrefabs:
+  - {fileID: 3014967331257203683, guid: 6310f75a3d58f224a8db0465e4cd5b40, type: 3}
+  - {fileID: 3014967331257203683, guid: 6310f75a3d58f224a8db0465e4cd5b40, type: 3}
+  - {fileID: 3014967331257203683, guid: 6310f75a3d58f224a8db0465e4cd5b40, type: 3}
+  - {fileID: 3014967331257203683, guid: 6310f75a3d58f224a8db0465e4cd5b40, type: 3}
+  - {fileID: 3014967331257203683, guid: 6310f75a3d58f224a8db0465e4cd5b40, type: 3}
+  - {fileID: 3014967331257203683, guid: 6310f75a3d58f224a8db0465e4cd5b40, type: 3}
+  - {fileID: 3014967331257203683, guid: 6310f75a3d58f224a8db0465e4cd5b40, type: 3}
+  - {fileID: 3014967331257203683, guid: 6310f75a3d58f224a8db0465e4cd5b40, type: 3}
+  - {fileID: 3014967331257203683, guid: 6310f75a3d58f224a8db0465e4cd5b40, type: 3}
   pathPrefab: {fileID: 7917902027739871423, guid: eb20f5ee188b60044a0dbe2b0a42cbd4, type: 3}
-  moveSpeed: 5
+  moveSpeed: 3
+  enemyInterval: 2
+  enemyIntervalVariance: 1
+  minimumSpawnTime: 0.1

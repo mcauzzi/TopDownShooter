@@ -161,3 +161,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19ce7c251140f104fadeb3091e0622bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  <WaveConfig>k__BackingField: {fileID: 11400000, guid: daa46bbdf4c4f794684a38d0442761f7, type: 2}

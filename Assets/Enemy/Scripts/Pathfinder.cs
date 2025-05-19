@@ -5,13 +5,13 @@ namespace Enemy.Scripts
 {
     public class Pathfinder : MonoBehaviour
     {
-        [SerializeField] private WaveConfigSO      waveConfig;
-        private                  List<Transform> waypoints;
-
+        [field:SerializeField] public WaveConfigSO    WaveConfig { get; set; }
+        private                 List<Transform> _waypoints;
+        private                 int             _currentWaypointIndex = 0;
         private void Start()
         {
-            waypoints          = waveConfig.GetWaypoints();
-            transform.position = waypoints[0].position;
+            _waypoints          = WaveConfig.GetWaypoints();
+            transform.position = _waypoints[0].position;
         }
 
         private void Update()
@@ -21,17 +21,17 @@ namespace Enemy.Scripts
 
         private void FollowPath()
         {
-            if (waypoints.Count == 0)
+            if (_currentWaypointIndex == _waypoints.Count)
             {
                 Destroy(gameObject);
                 return;
             }
-            var targetPosition = waypoints[0].position;
-            var movement       = waveConfig.MoveSpeed * Time.deltaTime;
+            var targetPosition = _waypoints[_currentWaypointIndex].position;
+            var movement       = WaveConfig.MoveSpeed * Time.deltaTime;
             transform.position = Vector2.MoveTowards(transform.position, targetPosition, movement);
             if (Vector2.Distance(transform.position, targetPosition) < 0.1f)
             {
-                waypoints.RemoveAt(0);
+                _currentWaypointIndex++;
             }
         }
     }
