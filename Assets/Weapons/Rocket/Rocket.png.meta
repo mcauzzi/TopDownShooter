@@ -1,31 +1,16 @@
 fileFormatVersion: 2
-guid: 6757b9918b413c642b021a93801a2ec9
+guid: 2cace5884ecc1b0469071ac2f2edabd0
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2021064506979229775
-    second: Nairan - Fighter - Engine_0
+      213: 8545083371659697457
+    second: Nairan - Rocket_0
   - first:
-      213: -6549742969626178329
-    second: Nairan - Fighter - Engine_1
+      213: 5803324151410891692
+    second: Nairan - Rocket_1
   - first:
-      213: 4141742500818047364
-    second: Nairan - Fighter - Engine_2
-  - first:
-      213: -3637639654692783463
-    second: Nairan - Fighter - Engine_3
-  - first:
-      213: -5248891611871230022
-    second: Nairan - Fighter - Engine_4
-  - first:
-      213: -1281974716089768212
-    second: Nairan - Fighter - Engine_5
-  - first:
-      213: -5482203104370416502
-    second: Nairan - Fighter - Engine_6
-  - first:
-      213: 8976500142663689614
-    second: Nairan - Fighter - Engine_7
+      213: -3309293671934382998
+    second: Nairan - Rocket_2
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -72,7 +57,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 65
+  spritePixelsToUnits: 80
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -147,177 +132,89 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Nairan - Fighter - Engine_0
+      name: Rocket_0
       rect:
         serializedVersion: 2
-        x: 24
-        y: 4
-        width: 16
-        height: 16
+        x: 1
+        y: 1
+        width: 7
+        height: 11
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: f40a5a606734c0c10800000000000000
-      internalID: 2021064506979229775
+      spriteID: 5d5562ef0935b7e49b2728bc691ce2d4
+      internalID: 1839458034
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Nairan - Fighter - Engine_1
+      name: Rocket_1
       rect:
         serializedVersion: 2
-        x: 88
-        y: 6
-        width: 16
-        height: 14
+        x: 10
+        y: 1
+        width: 7
+        height: 11
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 7ecc15d9873aa15a0800000000000000
-      internalID: -6549742969626178329
+      spriteID: f8573ac69a5ca8e469e3549eb6548f97
+      internalID: 830203407
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Nairan - Fighter - Engine_2
+      name: Rocket_2
       rect:
         serializedVersion: 2
-        x: 152
-        y: 5
-        width: 16
-        height: 15
+        x: 19
+        y: 1
+        width: 7
+        height: 11
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 481d5605cdc6a7930800000000000000
-      internalID: 4141742500818047364
+      spriteID: a341403619fbc63489e4619f6832cbce
+      internalID: 1249397397
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Nairan - Fighter - Engine_3
+      name: Rocket_3
       rect:
         serializedVersion: 2
-        x: 216
-        y: 4
-        width: 16
-        height: 17
+        x: 28
+        y: 1
+        width: 7
+        height: 11
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 99a7921d102848dc0800000000000000
-      internalID: -3637639654692783463
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Nairan - Fighter - Engine_4
-      rect:
-        serializedVersion: 2
-        x: 280
-        y: 3
-        width: 16
-        height: 17
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: ab743e983e03827b0800000000000000
-      internalID: -5248891611871230022
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Nairan - Fighter - Engine_5
-      rect:
-        serializedVersion: 2
-        x: 344
-        y: 5
-        width: 16
-        height: 15
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: ce6ef64b9c2853ee0800000000000000
-      internalID: -1281974716089768212
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Nairan - Fighter - Engine_6
-      rect:
-        serializedVersion: 2
-        x: 408
-        y: 5
-        width: 16
-        height: 15
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: a842571925d4be3b0800000000000000
-      internalID: -5482203104370416502
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Nairan - Fighter - Engine_7
-      rect:
-        serializedVersion: 2
-        x: 472
-        y: 5
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: e8566b9f15fe29c70800000000000000
-      internalID: 8976500142663689614
+      spriteID: 3cd9f225c99a72e4f9ec9eba8592cd45
+      internalID: 697221240
       vertices: []
       indices: 
       edges: []
@@ -326,7 +223,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: de8465a6744adf74396064f0d23ff47d
     internalID: 0
     vertices: []
     indices: 
@@ -334,16 +231,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":8.0,"y":16.0},"gridSpriteOffset":{"x":1.0,"y":0.0},"gridSpritePadding":{"x":1.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"autoSlicingMethod":0,"spriteAlignment":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      Nairan - Fighter - Engine_0: 2021064506979229775
-      Nairan - Fighter - Engine_1: -6549742969626178329
-      Nairan - Fighter - Engine_2: 4141742500818047364
-      Nairan - Fighter - Engine_3: -3637639654692783463
-      Nairan - Fighter - Engine_4: -5248891611871230022
-      Nairan - Fighter - Engine_5: -1281974716089768212
-      Nairan - Fighter - Engine_6: -5482203104370416502
-      Nairan - Fighter - Engine_7: 8976500142663689614
+      Rocket_0: 1839458034
+      Rocket_1: 830203407
+      Rocket_2: 1249397397
+      Rocket_3: 697221240
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
