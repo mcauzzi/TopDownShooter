@@ -1,23 +1,32 @@
+using System.Collections.Generic;
+using SharedScripts;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Serialization;
 
 namespace Player.Scripts
 {
     public class Input : MonoBehaviour
     {
-        [SerializeField, Range(1, 100)] private float   _horizontalSpeed = 20;
-        [SerializeField, Range(1, 100)] private float   _verticalSpeed   = 40;
-        [SerializeField]                private Padding padding;
-        private                                 Vector2 _minBound;
-        private                                 Vector2 _maxBound;
-        private                                 Vector2 _inputValue;
-        
+        [SerializeField, Range(1, 100)] private float       horizontalSpeed = 20;
+        [SerializeField, Range(1, 100)] private float       verticalSpeed   = 40;
+        [SerializeField]                private Padding     padding;
+        private                                 Vector2     _minBound;
+        private                                 Vector2     _maxBound;
+        private                                 Vector2     _inputValue;
+        private                                 IFireable[] _fireables;
+
 
         private void Start()
         {
-            SpeedVector = new Vector2(_horizontalSpeed, _verticalSpeed);
+            SpeedVector = new Vector2(horizontalSpeed, verticalSpeed);
             InitBoundaries();
             Debug.Log(padding);
+            _fireables = GetComponentsInChildren<IFireable>();
+            foreach (var fireable in _fireables)
+            {
+                Debug.Log("Got fireable", (Object)fireable);
+            }
         }
 
         private Vector2 SpeedVector { get; set; }
@@ -31,8 +40,8 @@ namespace Player.Scripts
         {
             var delta  = SpeedVector * _inputValue * Time.deltaTime;
             var newPos = new Vector2(transform.position.x, transform.position.y) + delta;
-            newPos.x           = Mathf.Clamp(newPos.x, _minBound.x+padding.Left, _maxBound.x-padding.Right);
-            newPos.y           = Mathf.Clamp(newPos.y, _minBound.y+padding.Bottom, _maxBound.y-padding.Top);
+            newPos.x           = Mathf.Clamp(newPos.x, _minBound.x + padding.Left,   _maxBound.x - padding.Right);
+            newPos.y           = Mathf.Clamp(newPos.y, _minBound.y + padding.Bottom, _maxBound.y - padding.Top);
             transform.position = newPos;
         }
 
@@ -48,6 +57,17 @@ namespace Player.Scripts
         {
             Debug.Log("Input value: " + value.Get<Vector2>());
             _inputValue = value.Get<Vector2>();
+        }
+
+        private void OnAttack(InputValue value)
+        {
+            foreach (var fireable in _fireables)
+            {
+                if (value.isPressed)
+                {
+                    fireable.Fire();
+                }
+            }
         }
     }
 }

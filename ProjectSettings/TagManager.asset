@@ -44,6 +44,9 @@ TagManager:
   - name: BackgroundStars
     uniqueID: 1908126113
     locked: 0
+  - name: Bullets
+    uniqueID: 2901379753
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
