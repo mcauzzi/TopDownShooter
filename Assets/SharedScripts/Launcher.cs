@@ -1,25 +1,14 @@
-using System;
 using System.Collections;
-using SharedScripts;
 using UnityEngine;
-using UnityEngine.Serialization;
 
-namespace Weapons.Rocket
+namespace SharedScripts
 {
-    public class RocketLauncher : MonoBehaviour, IFireable
+    public class Launcher : MonoBehaviour, IFireable
     {
-        [SerializeField] private GameObject rocketPrefab;
+        [SerializeField] private GameObject launchablePrefab;
         [SerializeField] private float      fireRate   = 1f;
         private                  bool       _canFire;
 
-        private void Start()
-        {
-        }
-
-        private void Update()
-        {
-           
-        }
 
         public void FireStart()
         {
@@ -32,7 +21,7 @@ namespace Weapons.Rocket
         {
             while (_canFire)
             {
-                var rocket = Instantiate(rocketPrefab, transform.position, Quaternion.identity);
+                var rocket = Instantiate(launchablePrefab, transform.position, Quaternion.identity);
                 yield return new WaitForSeconds(1 / fireRate);
             }
         }

@@ -481,6 +481,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1873639654720459636}
     m_Modifications:
+    - target: {fileID: 2334284556326535595, guid: 74cf75851eccc8347a52f8f681d40b6d, type: 3}
+      propertyPath: fireRate
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 5143252745349143997, guid: 74cf75851eccc8347a52f8f681d40b6d, type: 3}
       propertyPath: m_Name
       value: RocketLauncher (1)
@@ -605,6 +609,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1873639654720459636}
     m_Modifications:
+    - target: {fileID: 2334284556326535595, guid: 74cf75851eccc8347a52f8f681d40b6d, type: 3}
+      propertyPath: fireRate
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 5143252745349143997, guid: 74cf75851eccc8347a52f8f681d40b6d, type: 3}
       propertyPath: m_Name
       value: RocketLauncher

@@ -53,25 +53,17 @@ namespace Weapons.GuidedMissile
             }
         }
 
+        
         private void Update()
         {
             if (!_target)
             {
-                _lockedOn = false;
-                if (lockOnRoutine == null)
-                {
-                    lockOnRoutine = StartCoroutine(LockOnTarget());
-                }
+                RestartTargetScan();
             }
             if (_lockedOn)
             {
                 // Move towards the target
-                Vector2 direction = _target.position - transform.position;
-
-                direction.Normalize();
-                float angle = Vector2.SignedAngle(transform.up, direction);
-                transform.Rotate(Vector3.forward, angle * turnSpeed * Time.deltaTime);
-                transform.Translate(Vector2.up * (speed * Time.deltaTime));
+                MoveToTarget();
             }
             else
             {
@@ -79,11 +71,35 @@ namespace Weapons.GuidedMissile
                 transform.Translate(Vector2.up * (Time.deltaTime * speed));
             }
 
+            CheckLifeTime();
+        }
+
+        private void CheckLifeTime()
+        {
             lifeTime -= Time.deltaTime;
             if (lifeTime <= 0)
             {
                 Destroy(gameObject);
             }
+        }
+
+        private void RestartTargetScan()
+        {
+            _lockedOn = false;
+            if (lockOnRoutine == null)
+            {
+                lockOnRoutine = StartCoroutine(LockOnTarget());
+            }
+        }
+
+        private void MoveToTarget()
+        {
+            Vector2 direction = _target.position - transform.position;
+
+            direction.Normalize();
+            float angle = Vector2.SignedAngle(transform.up, direction);
+            transform.Rotate(Vector3.forward, angle * turnSpeed * Time.deltaTime);
+            transform.Translate(Vector2.up * (speed * Time.deltaTime));
         }
     }
 }

@@ -44,4 +44,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e39455f3b8d3c24ea23585c38f194dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rocketPrefab: {fileID: 2451880218599852806, guid: a9460a2f62b2adf49913d2d05bd6e16d, type: 3}
+  launchablePrefab: {fileID: 2451880218599852806, guid: a9460a2f62b2adf49913d2d05bd6e16d, type: 3}
+  fireRate: 1
