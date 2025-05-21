@@ -2,6 +2,7 @@ namespace SharedScripts
 {
     public interface IFireable
     {
-        void Fire();
+        void FireStart();
+        void FireStop();
     }
 }

@@ -53,19 +53,23 @@ namespace Player.Scripts
             Debug.Log(_maxBound);
         }
 
-        private void OnMove(InputValue value)
+        public void OnMove(InputValue value)
         {
-            Debug.Log("Input value: " + value.Get<Vector2>());
             _inputValue = value.Get<Vector2>();
         }
-
-        private void OnAttack(InputValue value)
+        public void OnAttack(InputValue value)
         {
             foreach (var fireable in _fireables)
             {
                 if (value.isPressed)
                 {
-                    fireable.Fire();
+                    Debug.Log("Attack Pressed");
+                    fireable.FireStart();
+                }
+                else
+                {
+                    Debug.Log("Attack Released");
+                    fireable.FireStop();
                 }
             }
         }
