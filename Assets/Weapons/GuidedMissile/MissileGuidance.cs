@@ -37,16 +37,9 @@ namespace Weapons.GuidedMissile
                 var size = Physics2D.OverlapCircleAll(transform.position, scanRange);
                 if (size.Length > 0)
                 {
-                    _target = size.Where(x => x.CompareTag("Enemy"))
-                                  .Where(x =>
-                                         {
-                                             Vector2 directionToTarget = (x.transform.position - transform.position).normalized;
-                                             float angle = Vector2.Angle(transform.up, directionToTarget);
-                                             return angle <= scanAngle; 
-                                         })
-                                  .Select(x => x.transform)
-                                  .OrderBy(x => Vector2.Distance(transform.position, x.transform.position))
-                                  .FirstOrDefault();
+                    var closestTarget = GetClosestTarget(size);
+
+                    _target = closestTarget;
                     if (_target)
                     {
                         _lockedOn     = true;
@@ -57,6 +50,35 @@ namespace Weapons.GuidedMissile
 
                 yield return new WaitForSeconds(scanInterval / 1000f);
             }
+        }
+
+        private Transform GetClosestTarget(Collider2D[] size)
+        {
+            Transform closestTarget = null;
+            float     minDistance   = float.MaxValue;
+            Vector3   missilePos    = transform.position;
+            Vector2   missileUp     = transform.up;
+
+            foreach (var hit in size)
+            {
+                if (!hit.CompareTag("Enemy"))
+                    continue;
+
+                Transform targetTransform   = hit.transform;
+                Vector2   directionToTarget = (targetTransform.position - missilePos).normalized;
+
+                if (Vector2.Angle(missileUp, directionToTarget) <= scanAngle)
+                {
+                    float distance = Vector2.SqrMagnitude(targetTransform.position - missilePos);
+                    if (distance < minDistance)
+                    {
+                        minDistance   = distance;
+                        closestTarget = targetTransform;
+                    }
+                }
+            }
+
+            return closestTarget;
         }
 
 
