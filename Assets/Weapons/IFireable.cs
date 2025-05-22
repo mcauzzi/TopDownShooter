@@ -1,4 +1,4 @@
-namespace SharedScripts
+namespace Weapons
 {
     public interface IFireable
     {

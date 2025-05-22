@@ -1,20 +1,23 @@
 using System.Collections;
 using UnityEngine;
 
-namespace SharedScripts
+namespace Weapons
 {
     public class Launcher : MonoBehaviour, IFireable
     {
         [SerializeField] private GameObject launchablePrefab;
         [SerializeField] private float      fireRate   = 1f;
         private                  bool       _canFire;
-
+        private Coroutine firingRoutine;
 
         public void FireStart()
         {
-            Debug.Log("Firing Start");
+            if(firingRoutine!=null)
+            {
+                return;
+            }
             _canFire = true;
-            StartCoroutine(Fire());
+            firingRoutine=StartCoroutine(Fire());
         }
 
         private IEnumerator Fire()
@@ -24,11 +27,11 @@ namespace SharedScripts
                 var rocket = Instantiate(launchablePrefab, transform.position, Quaternion.identity);
                 yield return new WaitForSeconds(1 / fireRate);
             }
+            firingRoutine = null;
         }
 
         public void FireStop()
         {
-            Debug.Log("Firing Stop");
             _canFire = false;
         }
     }

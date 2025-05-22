@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 2172602227165225701}
   - component: {fileID: 1183505560324227531}
   - component: {fileID: 7592457659032654017}
+  - component: {fileID: 3887366422729112873}
   m_Layer: 0
   m_Name: GuidedMissile
   m_TagString: Untagged
@@ -142,9 +143,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 20
-  turnSpeed: 5
-  lifeTime: 20
-  scanInterval: 200
+  turnSpeed: 20
+  lifeTime: 5
+  scanInterval: 100
   scanRange: 3
 --- !u!70 &1183505560324227531
 CapsuleCollider2D:
@@ -210,3 +211,16 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &3887366422729112873
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1615631701252256547}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0eecf52dce984b46a76a7e51310d848d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  explosionParticles: {fileID: 436844910990749184, guid: 522d7250009386e419d30c3a87d65f57, type: 3}

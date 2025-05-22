@@ -6,24 +6,25 @@ namespace SharedScripts
     {
         [field: SerializeField]
         public int Health { get; private set; }
-        [SerializeField] private ParticleSystem onHitParticles;
+        [SerializeField] private ParticleSystem onDeathParticles;
     
         public void TakeDamage(int damage)
         {
             Health -= damage;
-            if (onHitParticles)
-            {
-                PlayHitEffect();
-            }
+           
             if (Health <= 0)
             {
+                if (onDeathParticles)
+                {
+                    PlayHitEffect();
+                }
                 Destroy(gameObject);
             }
         }
 
         private void PlayHitEffect()
         {
-            var particles = Instantiate(onHitParticles, transform.position, Quaternion.identity);
+            var particles = Instantiate(onDeathParticles, transform.position, Quaternion.identity);
             particles.Play();
             Destroy(particles.gameObject, particles.main.duration+particles.main.startLifetime.constantMax);
         }

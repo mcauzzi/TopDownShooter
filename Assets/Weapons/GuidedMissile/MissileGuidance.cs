@@ -18,14 +18,14 @@ namespace Weapons.GuidedMissile
         [SerializeField] private float scanRange = 10f;
 
 
-        private Coroutine      lockOnRoutine;
+        private Coroutine lockOnRoutine;
         private bool      _lockedOn = false;
         private Transform _target;
 
         private void Start()
         {
-            _lockedOn  = false;
-            _target    = null;
+            _lockedOn     = false;
+            _target       = null;
             lockOnRoutine = StartCoroutine(LockOnTarget());
         }
 
@@ -48,12 +48,12 @@ namespace Weapons.GuidedMissile
                         yield break;
                     }
                 }
-              
+
                 yield return new WaitForSeconds(scanInterval / 1000f);
             }
         }
 
-        
+
         private void Update()
         {
             if (!_target)
@@ -65,27 +65,27 @@ namespace Weapons.GuidedMissile
             {
                 // Move in a random direction
                 var randomDirection = Random.insideUnitCircle.normalized;
-                transform.Rotate(Vector3.forward, Vector2.SignedAngle(Vector2.up, randomDirection) * turnSpeed * Time.deltaTime);
+                transform.Rotate(Vector3.forward,
+                                 Vector2.SignedAngle(Vector2.up, randomDirection) * turnSpeed * Time.deltaTime);
             }
             else if (_lockedOn)
             {
                 // Move towards the target
                 RotateToTarget();
             }
+
             transform.Translate(Vector2.up * (Time.deltaTime * speed));
             CheckLifeTime();
         }
 
         private bool HasObstacleInFront()
         {
-            var hit = Physics2D.Raycast(transform.position, transform.up, speed, LayerMask.GetMask("Player"));
+            var hit = Physics2D.Raycast(transform.position, transform.up, speed * 0.5f, LayerMask.GetMask("Player"));
             if (hit.collider)
             {
                 Debug.DrawLine(transform.position, hit.point, Color.green, 1f);
-                if (hit.collider.CompareTag("Enemy") == false) 
-                {
-                    return true;
-                }
+
+                return true;
             }
 
             return false;
