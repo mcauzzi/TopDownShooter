@@ -34,7 +34,7 @@ namespace Weapons.GuidedMissile
             while (!_lockedOn)
             {
                 var size = Physics2D.OverlapCircleAll(transform.position, scanRange);
-                Debug.DrawLine(transform.position, transform.position + Vector3.up * scanRange, Color.red, 1f);
+                Debug.DrawLine(transform.position, transform.position + transform.up * scanRange, Color.red, 1f);
                 if (size.Length > 0)
                 {
                     _target = size.Where(x => x.CompareTag("Enemy"))
@@ -60,18 +60,35 @@ namespace Weapons.GuidedMissile
             {
                 RestartTargetScan();
             }
-            if (_lockedOn)
+
+            if (HasObstacleInFront())
+            {
+                // Move in a random direction
+                var randomDirection = Random.insideUnitCircle.normalized;
+                transform.Rotate(Vector3.forward, Vector2.SignedAngle(Vector2.up, randomDirection) * turnSpeed * Time.deltaTime);
+            }
+            else if (_lockedOn)
             {
                 // Move towards the target
-                MoveToTarget();
+                RotateToTarget();
             }
-            else
+            transform.Translate(Vector2.up * (Time.deltaTime * speed));
+            CheckLifeTime();
+        }
+
+        private bool HasObstacleInFront()
+        {
+            var hit = Physics2D.Raycast(transform.position, transform.up, speed, LayerMask.GetMask("Player"));
+            if (hit.collider)
             {
-                //move forwards
-                transform.Translate(Vector2.up * (Time.deltaTime * speed));
+                Debug.DrawLine(transform.position, hit.point, Color.green, 1f);
+                if (hit.collider.CompareTag("Enemy") == false) 
+                {
+                    return true;
+                }
             }
 
-            CheckLifeTime();
+            return false;
         }
 
         private void CheckLifeTime()
@@ -92,14 +109,12 @@ namespace Weapons.GuidedMissile
             }
         }
 
-        private void MoveToTarget()
+        private void RotateToTarget()
         {
             Vector2 direction = _target.position - transform.position;
-
             direction.Normalize();
-            float angle = Vector2.SignedAngle(transform.up, direction);
+            var angle = Vector2.SignedAngle(transform.up, direction);
             transform.Rotate(Vector3.forward, angle * turnSpeed * Time.deltaTime);
-            transform.Translate(Vector2.up * (speed * Time.deltaTime));
         }
     }
 }

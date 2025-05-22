@@ -21,12 +21,7 @@ namespace Player.Scripts
         {
             SpeedVector = new Vector2(horizontalSpeed, verticalSpeed);
             InitBoundaries();
-            Debug.Log(padding);
             _fireables = GetComponentsInChildren<IFireable>();
-            foreach (var fireable in _fireables)
-            {
-                Debug.Log("Got fireable", (Object)fireable);
-            }
         }
 
         private Vector2 SpeedVector { get; set; }
@@ -57,18 +52,17 @@ namespace Player.Scripts
         {
             _inputValue = value.Get<Vector2>();
         }
+
         public void OnAttack(InputValue value)
         {
             foreach (var fireable in _fireables)
             {
                 if (value.isPressed)
                 {
-                    Debug.Log("Attack Pressed");
                     fireable.FireStart();
                 }
                 else
                 {
-                    Debug.Log("Attack Released");
                     fireable.FireStop();
                 }
             }

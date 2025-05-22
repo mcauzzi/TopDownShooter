@@ -203,6 +203,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <Health>k__BackingField: 30
+  onHitParticles: {fileID: 436844910990749184, guid: 522d7250009386e419d30c3a87d65f57, type: 3}
 --- !u!114 &8264630633246953197
 MonoBehaviour:
   m_ObjectHideFlags: 0

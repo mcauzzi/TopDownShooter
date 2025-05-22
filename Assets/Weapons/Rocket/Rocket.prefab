@@ -192,7 +192,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 30
   destroyOnHit: 1
-  timeBeforeEnabled: 0
+  timeBeforeEnabled: 0.2
 --- !u!114 &5197348669811628862
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -205,5 +205,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72eaf5c7593b2c341b4ebad5d2bfa3d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
+  speed: 20
   lifeTime: 5

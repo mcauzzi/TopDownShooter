@@ -33,7 +33,7 @@ namespace SharedScripts
             var health = other.GetComponent<HealthManager>();
             if (health && _enabled)
             {
-                health.DealDamage(damage);
+                health.TakeDamage(damage);
                 if (destroyOnHit)
                 {
                     Destroy(gameObject);

@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 620062357399752152}
   - component: {fileID: 5908132966373889681}
   - component: {fileID: 5677375570307402399}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -301,8 +301,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32d66a000ff7e7349a889e4c7f18ce51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  horizontalSpeed: 20
-  verticalSpeed: 30
+  horizontalSpeed: 10
+  verticalSpeed: 15
   padding:
     Left: 0.25
     Right: 0.25
@@ -321,6 +321,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <Health>k__BackingField: 100
+  onHitParticles: {fileID: 436844910990749184, guid: 522d7250009386e419d30c3a87d65f57, type: 3}
 --- !u!114 &5908132966373889681
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -374,7 +375,7 @@ GameObject:
   - component: {fileID: 8280591561236726255}
   - component: {fileID: 1312693303021354086}
   - component: {fileID: 6206754345870861102}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Engine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -489,6 +490,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: RocketLauncher (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 5143252745349143997, guid: 74cf75851eccc8347a52f8f681d40b6d, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 8091367486362879600, guid: 74cf75851eccc8347a52f8f681d40b6d, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.1477
@@ -591,6 +596,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MissileLauncher
       objectReference: {fileID: 0}
+    - target: {fileID: 5020886184879610017, guid: a2be4af6548a09145a2e16c5c7d3a7bc, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -616,6 +625,10 @@ PrefabInstance:
     - target: {fileID: 5143252745349143997, guid: 74cf75851eccc8347a52f8f681d40b6d, type: 3}
       propertyPath: m_Name
       value: RocketLauncher
+      objectReference: {fileID: 0}
+    - target: {fileID: 5143252745349143997, guid: 74cf75851eccc8347a52f8f681d40b6d, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8091367486362879600, guid: 74cf75851eccc8347a52f8f681d40b6d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -718,6 +731,10 @@ PrefabInstance:
     - target: {fileID: 5020886184879610017, guid: a2be4af6548a09145a2e16c5c7d3a7bc, type: 3}
       propertyPath: m_Name
       value: MissileLauncher (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5020886184879610017, guid: a2be4af6548a09145a2e16c5c7d3a7bc, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
