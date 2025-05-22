@@ -147,6 +147,7 @@ MonoBehaviour:
   lifeTime: 5
   scanInterval: 100
   scanRange: 3
+  scanAngle: 35
 --- !u!70 &1183505560324227531
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

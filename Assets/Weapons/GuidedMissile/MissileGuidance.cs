@@ -16,6 +16,7 @@ namespace Weapons.GuidedMissile
         private int scanInterval = 200;
 
         [SerializeField] private float scanRange = 10f;
+        [SerializeField] private float scanAngle = 45f;
 
 
         private Coroutine lockOnRoutine;
@@ -34,10 +35,15 @@ namespace Weapons.GuidedMissile
             while (!_lockedOn)
             {
                 var size = Physics2D.OverlapCircleAll(transform.position, scanRange);
-                Debug.DrawLine(transform.position, transform.position + transform.up * scanRange, Color.red, 1f);
                 if (size.Length > 0)
                 {
                     _target = size.Where(x => x.CompareTag("Enemy"))
+                                  .Where(x =>
+                                         {
+                                             Vector2 directionToTarget = (x.transform.position - transform.position).normalized;
+                                             float angle = Vector2.Angle(transform.up, directionToTarget);
+                                             return angle <= scanAngle; 
+                                         })
                                   .Select(x => x.transform)
                                   .OrderBy(x => Vector2.Distance(transform.position, x.transform.position))
                                   .FirstOrDefault();
