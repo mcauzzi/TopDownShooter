@@ -176,8 +176,8 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.00014317408, y: 0.04918714}
-  m_Size: {x: 0.04082571, y: 0.047125727}
+  m_Offset: {x: -0.00014317408, y: 0.06551883}
+  m_Size: {x: 0.052966088, y: 0.0607114}
   m_Direction: 0
 --- !u!114 &5540901519371123741
 MonoBehaviour:
@@ -193,7 +193,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 30
   destroyOnHit: 1
-  timeBeforeEnabled: 0.2
+  timeBeforeCanDealDamage: 0.05
 --- !u!114 &5197348669811628862
 MonoBehaviour:
   m_ObjectHideFlags: 0

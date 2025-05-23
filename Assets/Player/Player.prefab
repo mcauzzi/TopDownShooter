@@ -136,7 +136,7 @@ PolygonCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.5, y: 0.453125}
+    oldSize: {x: 0.64, y: 0.58}
     newSize: {x: 0.32, y: 0.29}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -144,20 +144,17 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0.11048896, y: 0.115274616}
-      - {x: 0.09375, y: 0.2265625}
-      - {x: -0.08135159, y: 0.22481105}
-      - {x: -0.08795486, y: 0.16842103}
-      - {x: -0.13912858, y: 0.13560744}
-      - {x: -0.25, y: 0.0703125}
-      - {x: -0.23949121, y: -0.0621546}
-      - {x: -0.12052259, y: -0.046217054}
-      - {x: -0.11771785, y: -0.20466924}
-      - {x: 0.15625, y: -0.2265625}
-      - {x: 0.171875, y: -0.2109375}
-      - {x: 0.234375, y: -0.1171875}
-      - {x: 0.25, y: -0.1015625}
-      - {x: 0.25, y: 0.1171875}
+    - - {x: 0.14612678, y: 0.14868507}
+      - {x: 0.13050148, y: 0.27222344}
+      - {x: -0.12478517, y: 0.270472}
+      - {x: -0.15472013, y: 0.15119898}
+      - {x: -0.31236616, y: 0.121541835}
+      - {x: -0.31410787, y: -0.06995038}
+      - {x: -0.1494783, y: -0.084082216}
+      - {x: -0.14555988, y: -0.26480806}
+      - {x: 0.14399952, y: -0.26665503}
+      - {x: 0.299002, y: -0.07260679}
+      - {x: 0.3279577, y: 0.12498328}
   m_UseDelaunayMesh: 0
 --- !u!114 &7859176671921800167
 MonoBehaviour:
@@ -321,7 +318,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <Health>k__BackingField: 100
-  onHitParticles: {fileID: 436844910990749184, guid: 522d7250009386e419d30c3a87d65f57, type: 3}
+  onDeathParticles: {fileID: 0}
 --- !u!114 &5908132966373889681
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -391,7 +388,7 @@ Transform:
   m_GameObject: {fileID: 8542668415243121160}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.0007, y: -0.2906, z: 0}
+  m_LocalPosition: {x: 0.001, y: -0.368, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

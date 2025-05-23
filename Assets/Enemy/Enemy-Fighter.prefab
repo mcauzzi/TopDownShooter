@@ -170,7 +170,7 @@ PolygonCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.53125, y: 0.453125}
+    oldSize: {x: 0.68, y: 0.58}
     newSize: {x: 0.34, y: 0.29}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -178,17 +178,16 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: -0.078125, y: 0.2265625}
-      - {x: -0.265625, y: 0.0234375}
-      - {x: -0.265625, y: -0.0703125}
-      - {x: -0.25, y: -0.1015625}
-      - {x: -0.15625, y: -0.2265625}
-      - {x: 0.10408415, y: -0.2244997}
-      - {x: 0.13566831, y: -0.11104545}
-      - {x: 0.25922137, y: -0.06336843}
-      - {x: 0.25737378, y: 0.033536315}
-      - {x: 0.114988096, y: 0.091016084}
-      - {x: 0.06063755, y: 0.22449967}
+    - - {x: -0.060112208, y: 0.28025502}
+      - {x: -0.30501276, y: 0.017627643}
+      - {x: -0.33170807, y: -0.06824741}
+      - {x: -0.12837121, y: -0.27612484}
+      - {x: 0.13196295, y: -0.27922472}
+      - {x: 0.15528673, y: -0.14924973}
+      - {x: 0.31188136, y: -0.08505194}
+      - {x: 0.33378232, y: -0.01705854}
+      - {x: 0.14493197, y: 0.12095998}
+      - {x: 0.12775317, y: 0.28645256}
   m_UseDelaunayMesh: 0
 --- !u!114 &-1396028458152528540
 MonoBehaviour:
@@ -203,7 +202,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <Health>k__BackingField: 30
-  onHitParticles: {fileID: 436844910990749184, guid: 522d7250009386e419d30c3a87d65f57, type: 3}
+  onDeathParticles: {fileID: 0}
 --- !u!114 &8264630633246953197
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -1,3 +1,4 @@
+using SharedScripts;
 using UnityEngine;
 
 namespace Weapons
@@ -9,7 +10,7 @@ namespace Weapons
         private void OnTriggerEnter2D(Collider2D other)
         {
             Debug.Log($"{gameObject.name} contact with {other.name}",gameObject);
-            if (explosionParticles)
+            if (explosionParticles && GetComponent<DamageDealer>()?.CanDealDamage==true)
             {
                 var particles = Instantiate(explosionParticles, transform.position, Quaternion.identity);
                 particles.Play();
