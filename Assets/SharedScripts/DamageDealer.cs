@@ -6,7 +6,7 @@ namespace SharedScripts
     public class DamageDealer:MonoBehaviour
     {
         [SerializeField] private int   damage = 10;
-        public                   int   Damage => damage;
+        public           int   Damage => damage;
         [SerializeField] private bool  destroyOnHit = true;
         [SerializeField] private float timeBeforeEnabled;
         private bool _enabled;

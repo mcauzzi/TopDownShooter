@@ -81,7 +81,6 @@ namespace Weapons.GuidedMissile
             return closestTarget;
         }
 
-
         private void Update()
         {
             if (!_target)
