@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Weapons
 {
-    public class Launcher : MonoBehaviour, IFireable
+    public class Launcher : MonoBehaviour, IWeapon
     {
         [SerializeField] private GameObject launchablePrefab;
         [SerializeField] private float      fireRate   = 1f;
@@ -24,7 +24,7 @@ namespace Weapons
         {
             while (_canFire)
             {
-                var rocket = Instantiate(launchablePrefab, transform.position, Quaternion.identity);
+                var rocket = Instantiate(launchablePrefab, transform);
                 yield return new WaitForSeconds(1 / fireRate);
             }
             firingRoutine = null;

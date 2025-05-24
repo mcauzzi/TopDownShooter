@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace Weapons.GuidedMissile
 {
-    public class MissileLauncher : MonoBehaviour,IFireable
+    public class MissileLauncher : MonoBehaviour,IWeapon
     {
         [SerializeField] private GameObject missilePrefab;
         [SerializeField] private int        maxMissileStored = 5;
@@ -31,7 +31,7 @@ namespace Weapons.GuidedMissile
             if (_currentMissileStored > 0)
             {
                 Debug.Log("Fired");
-                var missile = Instantiate(missilePrefab, transform.position, Quaternion.identity);
+                var missile = Instantiate(missilePrefab, transform);
                 _currentMissileStored--;
             }
         }

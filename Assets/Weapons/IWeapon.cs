@@ -1,6 +1,6 @@
 namespace Weapons
 {
-    public interface IFireable
+    public interface IWeapon
     {
         void FireStart();
         void FireStop();

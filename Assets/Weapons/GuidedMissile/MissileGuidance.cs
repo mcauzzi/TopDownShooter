@@ -101,7 +101,7 @@ namespace Weapons.GuidedMissile
                 RotateToTarget();
             }
 
-            transform.Translate(Vector2.up * (Time.deltaTime * speed));
+            transform.Translate(transform.up * (Time.deltaTime * speed),Space.World);
             CheckLifeTime();
         }
 

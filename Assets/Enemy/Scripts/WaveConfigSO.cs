@@ -1,7 +1,11 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using SharedScripts;
 using UnityEngine;
 using UnityEngine.Serialization;
+using Weapons;
+using Random = UnityEngine.Random;
 
 namespace Enemy.Scripts
 {
@@ -10,17 +14,39 @@ namespace Enemy.Scripts
     {
         [SerializeField] private List<GameObject> enemyPrefabs;
         [SerializeField] private Transform        pathPrefab;
-        [SerializeField]
-        private float moveSpeed = 5f;
+        [SerializeField] private float            moveSpeed = 5f;
 
         [SerializeField] public  float enemyInterval         = 1f;
         [SerializeField] private float enemyIntervalVariance = 0.2f;
         [SerializeField] private float minimumSpawnTime      = 0.1f;
+
+        [SerializeField]
+        private SerializableKeyValue<GameObject, int>[] weaponWeights =
+            Array.Empty<SerializableKeyValue<GameObject, int>>();
+
+        
+        public  SerializableKeyValue<GameObject, int>[] WeaponWeights => weaponWeights;
+        private int                                     _totalWeight;
+
+        private void OnEnable()
+        {
+            weaponWeights = weaponWeights.GroupBy(x => x.Key)
+                                         .Select(x =>
+                                                     new SerializableKeyValue<GameObject, int>(x.Key,
+                                                      x.Sum(y => y.Value)))
+                                         .ToArray();
+            _totalWeight = weaponWeights.Sum(x => x.Value);
+        }
+
         public Transform GetStartingPoint()
         {
             return pathPrefab.GetChild(0);
         }
-        public int EnemyCount=> enemyPrefabs.Count;
+
+        public int WeaponsTotalWeight => _totalWeight;
+
+        public int EnemyCount => enemyPrefabs.Count;
+
         public GameObject GetEnemyPrefab(int index)
         {
             return enemyPrefabs[index];
@@ -30,11 +56,13 @@ namespace Enemy.Scripts
         {
             return pathPrefab.Cast<Transform>().ToList();
         }
+
         public float GetEnemyInterval()
         {
-            var variance= enemyInterval + Random.Range(-enemyIntervalVariance, enemyIntervalVariance);
-            return Mathf.Clamp(variance, minimumSpawnTime,enemyInterval+enemyIntervalVariance);
+            var variance = enemyInterval + Random.Range(-enemyIntervalVariance, enemyIntervalVariance);
+            return Mathf.Clamp(variance, minimumSpawnTime, enemyInterval + enemyIntervalVariance);
         }
+
         public float MoveSpeed => moveSpeed;
     }
 }

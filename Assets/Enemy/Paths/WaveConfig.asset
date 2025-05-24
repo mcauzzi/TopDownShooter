@@ -23,3 +23,10 @@ MonoBehaviour:
   enemyInterval: 1
   enemyIntervalVariance: 0.5
   minimumSpawnTime: 0.1
+  weaponWeights:
+  - key: {fileID: 5143252745349143997, guid: 74cf75851eccc8347a52f8f681d40b6d, type: 3}
+    _value: 40
+  - key: {fileID: 5020886184879610017, guid: a2be4af6548a09145a2e16c5c7d3a7bc, type: 3}
+    _value: 20
+  - key: {fileID: 0}
+    _value: 60

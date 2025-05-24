@@ -15,14 +15,13 @@ namespace Player.Scripts
         private                                 Vector2     _minBound;
         private                                 Vector2     _maxBound;
         private                                 Vector2     _inputValue;
-        private                                 IFireable[] _fireables;
-
-
+        private                                 IWeapon[] _fireables;
+        
         private void Start()
         {
             SpeedVector = new Vector2(horizontalSpeed, verticalSpeed);
             InitBoundaries();
-            _fireables = GetComponentsInChildren<IFireable>();
+            _fireables = GetComponentsInChildren<IWeapon>();
         }
 
         private Vector2 SpeedVector { get; set; }

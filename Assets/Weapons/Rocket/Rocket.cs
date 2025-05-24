@@ -17,7 +17,7 @@ namespace Weapons.Rocket
         void Update()
         {
             //move forwards
-            transform.Translate(transform.up * (Time.deltaTime* speed));
+            transform.Translate(transform.up * (Time.deltaTime* speed), Space.World);
             lifeTime -= Time.deltaTime;
             if (lifeTime <= 0)
             {
