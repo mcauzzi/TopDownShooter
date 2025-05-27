@@ -24,7 +24,7 @@ namespace Weapons
         {
             while (_canFire)
             {
-                var rocket = Instantiate(launchablePrefab, transform);
+                var rocket = Instantiate(launchablePrefab, transform.position, transform.rotation);
                 yield return new WaitForSeconds(1 / fireRate);
             }
             firingRoutine = null;

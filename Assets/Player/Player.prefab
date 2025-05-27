@@ -318,7 +318,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <Health>k__BackingField: 100
-  onDeathParticles: {fileID: 0}
+  onDeathParticles: {fileID: 436844910990749184, guid: 522d7250009386e419d30c3a87d65f57, type: 3}
+  onDeathSound: {fileID: 8300000, guid: e416e485a39d5ae48841666eb8a5b7a2, type: 3}
 --- !u!114 &5908132966373889681
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -333,7 +334,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 100
   destroyOnHit: 0
-  timeBeforeEnabled: 0
+  timeBeforeCanDealDamage: 0
 --- !u!50 &5677375570307402399
 Rigidbody2D:
   serializedVersion: 5
@@ -372,6 +373,7 @@ GameObject:
   - component: {fileID: 8280591561236726255}
   - component: {fileID: 1312693303021354086}
   - component: {fileID: 6206754345870861102}
+  - component: {fileID: 3114090809361737305}
   m_Layer: 3
   m_Name: Engine
   m_TagString: Untagged
@@ -471,6 +473,20 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &3114090809361737305
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8542668415243121160}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 838753ee63347a04baf175229593d327, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clip: {fileID: 8300000, guid: 3ddbef554e9df674d8c48ffd9ae2b648, type: 3}
+  volume: 0.153
 --- !u!1001 &92483702739391403
 PrefabInstance:
   m_ObjectHideFlags: 0

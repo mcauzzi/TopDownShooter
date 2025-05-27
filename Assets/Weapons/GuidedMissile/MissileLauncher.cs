@@ -31,7 +31,7 @@ namespace Weapons.GuidedMissile
             if (_currentMissileStored > 0)
             {
                 Debug.Log("Fired");
-                var missile = Instantiate(missilePrefab, transform);
+                var missile = Instantiate(missilePrefab, transform.position,transform.rotation);
                 _currentMissileStored--;
             }
         }

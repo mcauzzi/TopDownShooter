@@ -7,6 +7,7 @@ namespace SharedScripts
         [field: SerializeField]
         public int Health { get; private set; }
         [SerializeField] private ParticleSystem onDeathParticles;
+        [SerializeField] private AudioClip onDeathSound;
     
         public void TakeDamage(int damage)
         {
@@ -17,6 +18,10 @@ namespace SharedScripts
                 if (onDeathParticles)
                 {
                     PlayHitEffect();
+                }
+                if (onDeathSound)
+                {
+                    AudioSource.PlayClipAtPoint(onDeathSound, transform.position);
                 }
                 Destroy(gameObject);
             }
