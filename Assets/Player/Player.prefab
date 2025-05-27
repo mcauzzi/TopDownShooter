@@ -16,9 +16,10 @@ GameObject:
   - component: {fileID: 620062357399752152}
   - component: {fileID: 5908132966373889681}
   - component: {fileID: 5677375570307402399}
+  - component: {fileID: 6710517148686225539}
   m_Layer: 3
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -318,8 +319,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <Health>k__BackingField: 100
-  onDeathParticles: {fileID: 436844910990749184, guid: 522d7250009386e419d30c3a87d65f57, type: 3}
-  onDeathSound: {fileID: 8300000, guid: e416e485a39d5ae48841666eb8a5b7a2, type: 3}
 --- !u!114 &5908132966373889681
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -362,6 +361,21 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &6710517148686225539
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4378803784294671248}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ebfa51e5e54414d8addca178f74867b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onDeathParticles: {fileID: 436844910990749184, guid: 522d7250009386e419d30c3a87d65f57, type: 3}
+  onDeathSound: {fileID: 8300000, guid: e416e485a39d5ae48841666eb8a5b7a2, type: 3}
+  scoreValue: 100
 --- !u!1 &8542668415243121160
 GameObject:
   m_ObjectHideFlags: 0

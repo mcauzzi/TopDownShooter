@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 namespace SharedScripts
@@ -6,32 +7,28 @@ namespace SharedScripts
     {
         [field: SerializeField]
         public int Health { get; private set; }
-        [SerializeField] private ParticleSystem onDeathParticles;
-        [SerializeField] private AudioClip onDeathSound;
-    
+
+        public delegate void OnDeath();
+        public event OnDeath onDeath;
+        public delegate void OnHealthChanged(int newHealth);
+        public event OnHealthChanged onHealthChanged;
+        private void Start()
+        {
+          
+        }
+
         public void TakeDamage(int damage)
         {
             Health -= damage;
-           
+            onHealthChanged?.Invoke(Health);
             if (Health <= 0)
             {
-                if (onDeathParticles)
-                {
-                    PlayHitEffect();
-                }
-                if (onDeathSound)
-                {
-                    AudioSource.PlayClipAtPoint(onDeathSound, transform.position);
-                }
+                onDeath?.Invoke();
+
                 Destroy(gameObject);
             }
         }
 
-        private void PlayHitEffect()
-        {
-            var particles = Instantiate(onDeathParticles, transform.position, Quaternion.identity);
-            particles.Play();
-            Destroy(particles.gameObject, particles.main.duration+particles.main.startLifetime.constantMax);
-        }
+     
     }
 }

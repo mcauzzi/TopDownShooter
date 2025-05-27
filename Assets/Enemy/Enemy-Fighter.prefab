@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: -1396028458152528540}
   - component: {fileID: 8264630633246953197}
   - component: {fileID: 3523658667162729105}
+  - component: {fileID: 8653870954614257439}
   m_Layer: 0
   m_Name: Enemy-Fighter
   m_TagString: Enemy
@@ -204,8 +205,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <Health>k__BackingField: 30
-  onDeathParticles: {fileID: 436844910990749184, guid: 522d7250009386e419d30c3a87d65f57, type: 3}
-  onDeathSound: {fileID: 8300000, guid: a815ce1edb15c8b48a1b84cc5c1f42e5, type: 3}
 --- !u!114 &8264630633246953197
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -233,6 +232,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dbdaeb3609d5f594bbc146d1c130642b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &8653870954614257439
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3014967331257203683}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ebfa51e5e54414d8addca178f74867b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onDeathParticles: {fileID: 436844910990749184, guid: 522d7250009386e419d30c3a87d65f57, type: 3}
+  onDeathSound: {fileID: 8300000, guid: a815ce1edb15c8b48a1b84cc5c1f42e5, type: 3}
+  scoreValue: 100
 --- !u!1 &3741560373699048656
 GameObject:
   m_ObjectHideFlags: 0
