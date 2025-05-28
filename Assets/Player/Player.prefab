@@ -319,6 +319,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <Health>k__BackingField: 100
+  iff: 1
 --- !u!114 &5908132966373889681
 MonoBehaviour:
   m_ObjectHideFlags: 0

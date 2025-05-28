@@ -1,3 +1,5 @@
+using SharedScripts;
+using SharedScripts.IFF;
 using UnityEngine;
 
 namespace Weapons.GuidedMissile
@@ -9,10 +11,15 @@ namespace Weapons.GuidedMissile
         [SerializeField] private float      reloadTime       = 2f;
         private                  int        _currentMissileStored;
         private                  float      _reloadTimer;
+
+        private Iff _iff;
+
         // Start is called once before the first execution of Update after the MonoBehaviour is created
         void Start()
         {
-            _currentMissileStored= maxMissileStored;
+            _currentMissileStored = maxMissileStored;
+            _iff                  = GetComponentInParent<HealthManager>()?.Iff?? Iff.None;
+            //Create a pool for missiles
         }
 
         // Update is called once per frame
@@ -32,6 +39,7 @@ namespace Weapons.GuidedMissile
             {
                 Debug.Log("Fired");
                 var missile = Instantiate(missilePrefab, transform.position,transform.rotation);
+                missile.GetComponent<MissileGuidance>().Iff = _iff;
                 _currentMissileStored--;
             }
         }

@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Linq;
 using System.Threading.Tasks;
+using SharedScripts;
+using SharedScripts.IFF;
 using UnityEngine;
 
 namespace Weapons.GuidedMissile
@@ -17,12 +19,14 @@ namespace Weapons.GuidedMissile
 
         [SerializeField] private float scanRange = 10f;
         [SerializeField] private float scanAngle = 45f;
-
+        
 
         private Coroutine lockOnRoutine;
         private bool      _lockedOn = false;
         private Transform _target;
-
+       public   Iff       Iff { private get; set; }
+        
+        
         private void Start()
         {
             _lockedOn     = false;
@@ -34,14 +38,15 @@ namespace Weapons.GuidedMissile
         {
             while (!_lockedOn)
             {
-                var size = Physics2D.OverlapCircleAll(transform.position, scanRange);
-                if (size.Length > 0)
+                var possibleTargets = Physics2D.OverlapCircleAll(transform.position, scanRange);
+                if (possibleTargets.Length > 0)
                 {
-                    var closestTarget = GetClosestTarget(size);
+                    var closestTarget = GetClosestTarget(possibleTargets);
 
                     _target = closestTarget;
                     if (_target)
                     {
+                       
                         _lockedOn     = true;
                         lockOnRoutine = null;
                         yield break;
@@ -52,18 +57,21 @@ namespace Weapons.GuidedMissile
             }
         }
 
-        private Transform GetClosestTarget(Collider2D[] size)
+        private Transform GetClosestTarget(Collider2D[] possibleTargets)
         {
             Transform closestTarget = null;
             float     minDistance   = float.MaxValue;
             Vector3   missilePos    = transform.position;
             Vector2   missileUp     = transform.up;
 
-            foreach (var hit in size)
+            foreach (var hit in possibleTargets)
             {
-                if (!hit.CompareTag("Enemy"))
+                var targetIff= hit.GetComponent<HealthManager>()?.Iff?? Iff.None;
+                if (!Iff.CanTargetIff(targetIff))
+                {
                     continue;
-
+                }
+              
                 Transform targetTransform   = hit.transform;
                 Vector2   directionToTarget = (targetTransform.position - missilePos).normalized;
 
