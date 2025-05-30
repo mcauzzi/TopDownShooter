@@ -29,7 +29,7 @@ namespace SharedScripts
                 OnDeath?.Invoke();
                 if (gameOverOnDeath)
                 {
-                    LevelManager.Instance.LoadLevel(Levels.GameOver);
+                    LevelManager.Instance?.LoadLevel(Levels.GameOver);
                 }
                 Destroy(gameObject);
             }
