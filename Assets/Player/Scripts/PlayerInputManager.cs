@@ -1,8 +1,5 @@
-using System.Collections.Generic;
-using SharedScripts;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.Serialization;
 using Weapons;
 
 namespace Player.Scripts
@@ -15,15 +12,15 @@ namespace Player.Scripts
         private                                 Vector2   _minBound;
         private                                 Vector2   _maxBound;
         private                                 Vector2   _inputValue;
-        private                                 IWeapon[] _fireables;
-        private                                 int   _selectedWeaponIndex;
+        private                                 WeaponGroup[] _weaponGroups;
+        private                                 int   _selectedWeaponGroup;
 
         private void Start()
         {
             SpeedVector = new Vector2(horizontalSpeed, verticalSpeed);
             InitBoundaries();
-            _fireables      = GetComponentsInChildren<IWeapon>();
-            _selectedWeaponIndex = 0;
+            _weaponGroups      = GetComponentsInChildren<WeaponGroup>();
+            _selectedWeaponGroup = 0;
         }
 
         private Vector2 SpeedVector { get; set; }
@@ -59,36 +56,37 @@ namespace Player.Scripts
         {
             if (value.isPressed)
             {
-                _fireables[_selectedWeaponIndex].FireStart();
+                _weaponGroups[_selectedWeaponGroup].FireStart();
             }
             else
             {
-                _fireables[_selectedWeaponIndex].FireStop();
+                _weaponGroups[_selectedWeaponGroup].FireStop();
             }
         }
 
         public void OnNext(InputValue value)
         {
-            if(_selectedWeaponIndex+1< _fireables.Length)
+            if(_selectedWeaponGroup+1< _weaponGroups.Length)
             {
-                _selectedWeaponIndex++;
+                _selectedWeaponGroup++;
             }
             else
             {
-                _selectedWeaponIndex = 0;
+                _selectedWeaponGroup = 0;
             }
+            Debug.Log("Selected Weapon: " + _selectedWeaponGroup);
         }
         public void OnPrevious(InputValue value)
         {
-            if(_selectedWeaponIndex-1 >= 0)
+            if(_selectedWeaponGroup-1 >= 0)
             {
-                _selectedWeaponIndex--;
+                _selectedWeaponGroup--;
             }
             else
             {
-                _selectedWeaponIndex = _fireables.Length - 1;
+                _selectedWeaponGroup = _weaponGroups.Length - 1;
             }
-            Debug.Log("Selected Weapon: " + _selectedWeaponIndex);
+            Debug.Log("Selected Weapon: " + _selectedWeaponGroup);
         }
     }
 }

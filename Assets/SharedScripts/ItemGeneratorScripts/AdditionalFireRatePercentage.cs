@@ -1,5 +1,4 @@
 using System;
-using UnityEngine;
 using Random = System.Random;
 
 namespace SharedScripts.ItemGeneratorScripts

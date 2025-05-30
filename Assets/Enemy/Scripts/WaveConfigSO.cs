@@ -3,8 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using SharedScripts;
 using UnityEngine;
-using UnityEngine.Serialization;
-using Weapons;
 using Random = UnityEngine.Random;
 
 namespace Enemy.Scripts

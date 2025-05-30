@@ -1,4 +1,3 @@
-using System;
 using SharedScripts.IFF;
 using UnityEngine;
 

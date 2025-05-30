@@ -1,9 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using SharedScripts;
-using Unity.VisualScripting;
 using UnityEngine;
-using Weapons;
 
 namespace Enemy.Scripts
 {
