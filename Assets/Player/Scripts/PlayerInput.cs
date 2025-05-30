@@ -7,21 +7,23 @@ using Weapons;
 
 namespace Player.Scripts
 {
-    public class Input : MonoBehaviour
+    public class PlayerInputManager : MonoBehaviour
     {
-        [SerializeField, Range(1, 100)] private float       horizontalSpeed = 20;
-        [SerializeField, Range(1, 100)] private float       verticalSpeed   = 40;
-        [SerializeField]                private Padding     padding;
-        private                                 Vector2     _minBound;
-        private                                 Vector2     _maxBound;
-        private                                 Vector2     _inputValue;
+        [SerializeField, Range(1, 100)] private float     horizontalSpeed = 20;
+        [SerializeField, Range(1, 100)] private float     verticalSpeed   = 40;
+        [SerializeField]                private Padding   padding;
+        private                                 Vector2   _minBound;
+        private                                 Vector2   _maxBound;
+        private                                 Vector2   _inputValue;
         private                                 IWeapon[] _fireables;
-        
+        private                                 int   _selectedWeaponIndex;
+
         private void Start()
         {
             SpeedVector = new Vector2(horizontalSpeed, verticalSpeed);
             InitBoundaries();
-            _fireables = GetComponentsInChildren<IWeapon>();
+            _fireables      = GetComponentsInChildren<IWeapon>();
+            _selectedWeaponIndex = 0;
         }
 
         private Vector2 SpeedVector { get; set; }
@@ -55,17 +57,38 @@ namespace Player.Scripts
 
         public void OnAttack(InputValue value)
         {
-            foreach (var fireable in _fireables)
+            if (value.isPressed)
             {
-                if (value.isPressed)
-                {
-                    fireable.FireStart();
-                }
-                else
-                {
-                    fireable.FireStop();
-                }
+                _fireables[_selectedWeaponIndex].FireStart();
             }
+            else
+            {
+                _fireables[_selectedWeaponIndex].FireStop();
+            }
+        }
+
+        public void OnNext(InputValue value)
+        {
+            if(_selectedWeaponIndex+1< _fireables.Length)
+            {
+                _selectedWeaponIndex++;
+            }
+            else
+            {
+                _selectedWeaponIndex = 0;
+            }
+        }
+        public void OnPrevious(InputValue value)
+        {
+            if(_selectedWeaponIndex-1 >= 0)
+            {
+                _selectedWeaponIndex--;
+            }
+            else
+            {
+                _selectedWeaponIndex = _fireables.Length - 1;
+            }
+            Debug.Log("Selected Weapon: " + _selectedWeaponIndex);
         }
     }
 }

@@ -19,14 +19,14 @@ namespace Weapons.GuidedMissile
 
         [SerializeField] private float scanRange = 10f;
         [SerializeField] private float scanAngle = 45f;
-        
+
 
         private Coroutine lockOnRoutine;
         private bool      _lockedOn = false;
         private Transform _target;
-       public   Iff       Iff { private get; set; }
-        
-        
+        public  Iff       Iff { private get; set; }
+
+
         private void Start()
         {
             _lockedOn     = false;
@@ -46,7 +46,6 @@ namespace Weapons.GuidedMissile
                     _target = closestTarget;
                     if (_target)
                     {
-                       
                         _lockedOn     = true;
                         lockOnRoutine = null;
                         yield break;
@@ -66,12 +65,12 @@ namespace Weapons.GuidedMissile
 
             foreach (var hit in possibleTargets)
             {
-                var targetIff= hit.GetComponent<HealthManager>()?.Iff?? Iff.None;
+                var targetIff = hit.GetComponent<HealthManager>()?.Iff ?? Iff.None;
                 if (!Iff.CanTargetIff(targetIff))
                 {
                     continue;
                 }
-              
+
                 Transform targetTransform   = hit.transform;
                 Vector2   directionToTarget = (targetTransform.position - missilePos).normalized;
 
@@ -109,7 +108,7 @@ namespace Weapons.GuidedMissile
                 RotateToTarget();
             }
 
-            transform.Translate(transform.up * (Time.deltaTime * speed),Space.World);
+            transform.Translate(transform.up * (Time.deltaTime * speed), Space.World);
             CheckLifeTime();
         }
 

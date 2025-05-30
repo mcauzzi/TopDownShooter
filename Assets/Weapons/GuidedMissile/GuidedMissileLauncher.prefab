@@ -47,3 +47,4 @@ MonoBehaviour:
   missilePrefab: {fileID: 1615631701252256547, guid: d0f4d060a9b0b11429fdf6912f9c8168, type: 3}
   maxMissileStored: 5
   reloadTime: 2
+  <AmmoIconPrefab>k__BackingField: {fileID: 5691557950356559331, guid: bf7291079595d314ab576e885282f889, type: 3}

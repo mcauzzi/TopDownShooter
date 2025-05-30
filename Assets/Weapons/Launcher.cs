@@ -34,5 +34,9 @@ namespace Weapons
         {
             _canFire = false;
         }
+        public string GetWeaponName()
+        {
+            return "Launcher";
+        }
     }
 }
