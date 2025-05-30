@@ -16,7 +16,7 @@ namespace UI
         void Start()
         {
             var player = Resources.FindObjectsOfTypeAll<HealthManager>().First(x=>x.CompareTag("Player"));
-            player.onHealthChanged+= UpdateHealthUI;
+            player.OnHealthChanged+= UpdateHealthUI;
             _healthSlider = GetComponentInChildren<Slider>();
             _healthSlider.maxValue= player.Health;
             _healthSlider.value = player.Health;

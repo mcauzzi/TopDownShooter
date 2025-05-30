@@ -20,6 +20,7 @@ namespace Player.Scripts
             SpeedVector = new Vector2(horizontalSpeed, verticalSpeed);
             InitBoundaries();
             _weaponGroups      = GetComponentsInChildren<WeaponGroup>();
+            Debug.Log($"Loaded {_weaponGroups.Length} weapons");
             _selectedWeaponGroup = 0;
         }
 
@@ -43,8 +44,6 @@ namespace Player.Scripts
         {
             _minBound = Camera.main.ViewportToWorldPoint(Vector2.zero);
             _maxBound = Camera.main.ViewportToWorldPoint(Vector2.one);
-            Debug.Log(_minBound);
-            Debug.Log(_maxBound);
         }
 
         public void OnMove(InputValue value)

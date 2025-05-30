@@ -15,7 +15,7 @@ namespace SharedScripts
             var healthManager = GetComponent<HealthManager>();
             if (healthManager)
             {
-                healthManager.onDeath += OnDeathHandler;
+                healthManager.OnDeath += OnDeathHandler;
             }
             else
             {
