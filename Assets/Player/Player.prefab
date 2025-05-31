@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 5908132966373889681}
   - component: {fileID: 5677375570307402399}
   - component: {fileID: 6710517148686225539}
+  - component: {fileID: 8451599100451849564}
   m_Layer: 3
   m_Name: Player
   m_TagString: Player
@@ -297,13 +298,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32d66a000ff7e7349a889e4c7f18ce51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  horizontalSpeed: 10
-  verticalSpeed: 15
-  padding:
-    Left: 0.25
-    Right: 0.25
-    Top: 0.25
-    Bottom: 0.25
 --- !u!114 &620062357399752152
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -376,6 +370,25 @@ MonoBehaviour:
   onDeathParticles: {fileID: 436844910990749184, guid: 522d7250009386e419d30c3a87d65f57, type: 3}
   onDeathSound: {fileID: 8300000, guid: e416e485a39d5ae48841666eb8a5b7a2, type: 3}
   scoreValue: 100
+--- !u!114 &8451599100451849564
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4378803784294671248}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eaebb95614314aed990060e70dae08ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  horizontalSpeed: 20
+  verticalSpeed: 40
+  padding:
+    Left: 0
+    Right: 0
+    Top: 0
+    Bottom: 0
 --- !u!1 &8542668415243121160
 GameObject:
   m_ObjectHideFlags: 0

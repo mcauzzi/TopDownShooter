@@ -10,7 +10,7 @@ namespace UI.AmmoUI
         // Start is called once before the first execution of Update after the MonoBehaviour is created
         void Start()
         {
-            var playerWeapons = FindAnyObjectByType<PlayerInputManager>().GetComponentsInChildren<IWeaponWithAmmo>();
+            var playerWeapons = FindAnyObjectByType<PlayerWeaponController>().GetComponentsInChildren<IWeaponWithAmmo>();
             foreach (var playerWeapon in playerWeapons)
             {
                 var ammoGroup          = Instantiate(ammoGroupPrefab, transform);
