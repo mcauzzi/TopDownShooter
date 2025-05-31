@@ -145,8 +145,14 @@ namespace Weapons.GuidedMissile
         {
             Vector2 direction = _target.position - transform.position;
             direction.Normalize();
-            var angle = Vector2.SignedAngle(transform.up, direction);
-            transform.Rotate(Vector3.forward, angle * turnSpeed * Time.deltaTime);
+            var   angle          = Vector2.SignedAngle(transform.up, direction);
+            float rotationAmount = Mathf.Sign(angle) * turnSpeed * Time.deltaTime;
+    
+            // Limita la rotazione alla quantità di angolo rimanente (evita oscillazioni)
+            if (Mathf.Abs(rotationAmount) > Mathf.Abs(angle))
+                rotationAmount = angle;
+        
+            transform.Rotate(Vector3.forward, rotationAmount);
         }
     }
 }

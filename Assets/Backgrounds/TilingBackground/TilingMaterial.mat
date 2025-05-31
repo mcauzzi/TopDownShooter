@@ -43,8 +43,8 @@ Material:
     m_Floats:
     - _ColorVariation: 0.1
     - _EnableExternalAlpha: 0
-    - _TileX: 64
-    - _TileY: 64
+    - _TileX: 128
+    - _TileY: 128
     - _VariationIntensity: 0.001
     - _ZWrite: 0
     m_Colors:

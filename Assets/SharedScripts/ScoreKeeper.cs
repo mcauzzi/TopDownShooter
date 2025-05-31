@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 namespace SharedScripts
@@ -9,6 +10,16 @@ namespace SharedScripts
         public delegate void ScoreChangedHandler(double newScore);
 
         public event ScoreChangedHandler OnScoreChanged;
+        public static ScoreKeeper Instance { get; private set; }
+        private void Awake()
+        {
+            if (Instance)
+            {
+                Destroy(gameObject);
+                return;
+            }
+            DontDestroyOnLoad(gameObject);
+        }
 
         public double Score
         {
