@@ -666,14 +666,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1549052218734197249, guid: 1f1f8b791aabd8c44ae4363d2362b5b5, type: 3}
-      propertyPath: m_CellSize.x
-      value: 80
-      objectReference: {fileID: 0}
-    - target: {fileID: 1549052218734197249, guid: 1f1f8b791aabd8c44ae4363d2362b5b5, type: 3}
-      propertyPath: m_CellSize.y
-      value: 60
-      objectReference: {fileID: 0}
     - target: {fileID: 2387397805696984996, guid: 1f1f8b791aabd8c44ae4363d2362b5b5, type: 3}
       propertyPath: m_Name
       value: InGameUi
@@ -758,58 +750,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3919490894049224407, guid: 1f1f8b791aabd8c44ae4363d2362b5b5, type: 3}
-      propertyPath: m_Pivot.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3919490894049224407, guid: 1f1f8b791aabd8c44ae4363d2362b5b5, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3919490894049224407, guid: 1f1f8b791aabd8c44ae4363d2362b5b5, type: 3}
-      propertyPath: m_AnchorMin.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3919490894049224407, guid: 1f1f8b791aabd8c44ae4363d2362b5b5, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 60
-      objectReference: {fileID: 0}
-    - target: {fileID: 3919490894049224407, guid: 1f1f8b791aabd8c44ae4363d2362b5b5, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 3919490894049224407, guid: 1f1f8b791aabd8c44ae4363d2362b5b5, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -0.0015563965
-      objectReference: {fileID: 0}
-    - target: {fileID: 4027838192167327554, guid: 1f1f8b791aabd8c44ae4363d2362b5b5, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 4027838192167327554, guid: 1f1f8b791aabd8c44ae4363d2362b5b5, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 60
-      objectReference: {fileID: 0}
-    - target: {fileID: 4638735170467347017, guid: 1f1f8b791aabd8c44ae4363d2362b5b5, type: 3}
-      propertyPath: m_Pivot.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4638735170467347017, guid: 1f1f8b791aabd8c44ae4363d2362b5b5, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4638735170467347017, guid: 1f1f8b791aabd8c44ae4363d2362b5b5, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 400
-      objectReference: {fileID: 0}
-    - target: {fileID: 4638735170467347017, guid: 1f1f8b791aabd8c44ae4363d2362b5b5, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 55
-      objectReference: {fileID: 0}
-    - target: {fileID: 4638735170467347017, guid: 1f1f8b791aabd8c44ae4363d2362b5b5, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 350
-      objectReference: {fileID: 0}
     - target: {fileID: 6821100889603403983, guid: 1f1f8b791aabd8c44ae4363d2362b5b5, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -874,22 +814,6 @@ PrefabInstance:
     - target: {fileID: 4378803784294671248, guid: 6bc113957df7d2b438d910703d25fac2, type: 3}
       propertyPath: m_Name
       value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 5677375570307402399, guid: 6bc113957df7d2b438d910703d25fac2, type: 3}
-      propertyPath: m_BodyType
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8451599100451849564, guid: 6bc113957df7d2b438d910703d25fac2, type: 3}
-      propertyPath: engineStats.<MaxSpeed>k__BackingField
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 8451599100451849564, guid: 6bc113957df7d2b438d910703d25fac2, type: 3}
-      propertyPath: engineStats.<Acceleration>k__BackingField
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8451599100451849564, guid: 6bc113957df7d2b438d910703d25fac2, type: 3}
-      propertyPath: engineStats.<RotationSpeed>k__BackingField
-      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
