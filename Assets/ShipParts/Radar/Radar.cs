@@ -17,11 +17,10 @@ namespace ShipParts.Radar
 
         private Coroutine       scanRoutine;
         private TargetsStruct[] _targets;
-
-        public  TargetsStruct[] Targets    => _targets;
-        public  bool            HasTargets => _targets is { Length: > 0 };
-        public bool RadarEnabled => scanRoutine != null;
-
+        
+        public delegate void RadarTargetsUpdatedEventHandler(TargetsStruct[] targets);
+        public event RadarTargetsUpdatedEventHandler RadarTargetsUpdated;
+        public bool IsScanning => scanRoutine != null;
         private void Start()
         {
             _targets    = Array.Empty<TargetsStruct>();
@@ -29,7 +28,6 @@ namespace ShipParts.Radar
 
         public void StartScan()
         {
-           
             if (scanRoutine == null)
             {
                 scanRoutine = StartCoroutine(ScanArea());
@@ -38,7 +36,6 @@ namespace ShipParts.Radar
 
         public void StopScan()
         {
-            Debug.Log($"Stopping radar scan.");
             if (scanRoutine != null)
             {
                 StopCoroutine(scanRoutine);
@@ -58,6 +55,7 @@ namespace ShipParts.Radar
                 if (possibleTargets.Length > 0)
                 {
                     SetTargets(possibleTargets);
+                    RadarTargetsUpdated?.Invoke(_targets);
                 }
                 yield return new WaitForSeconds(scanInterval / 1000f);
             }

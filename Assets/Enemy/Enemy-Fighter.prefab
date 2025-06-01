@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 8264630633246953197}
   - component: {fileID: 3523658667162729105}
   - component: {fileID: 8653870954614257439}
+  - component: {fileID: 3092668067846569411}
   m_Layer: 0
   m_Name: Enemy-Fighter
   m_TagString: Enemy
@@ -107,7 +108,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19ce7c251140f104fadeb3091e0622bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <WaveConfig>k__BackingField: {fileID: 11400000, guid: daa46bbdf4c4f794684a38d0442761f7, type: 2}
 --- !u!50 &8415160182135682075
 Rigidbody2D:
   serializedVersion: 5
@@ -206,6 +206,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <Health>k__BackingField: 30
   iff: 2
+  gameOverOnDeath: 0
 --- !u!114 &8264630633246953197
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -248,6 +249,21 @@ MonoBehaviour:
   onDeathParticles: {fileID: 436844910990749184, guid: 522d7250009386e419d30c3a87d65f57, type: 3}
   onDeathSound: {fileID: 8300000, guid: a815ce1edb15c8b48a1b84cc5c1f42e5, type: 3}
   scoreValue: 100
+--- !u!114 &3092668067846569411
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3014967331257203683}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1662db7f0a1c496b9c28de20771b912a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scanInterval: 100
+  scanRange: 60
+  scanAngle: 90
 --- !u!1 &3741560373699048656
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,35 +1,28 @@
-using System;
-using System.Collections;
+
+using Shared.Scripts;
 using Shared.Scripts.IFF;
 using ShipParts.Radar;
 using UnityEngine;
-using Random = UnityEngine.Random;
 
-namespace Weapons.GuidedMissile
+namespace Enemy.Scripts
 {
-    public class MissileGuidance : MonoBehaviour
+    public class EnemyBrain : MonoBehaviour
     {
-        [SerializeField] private float speed     = 10f;
-        [SerializeField] private float turnSpeed = 5f;
-
-        [SerializeField] private float     lifeTime = 5f;
-        private                  Transform _target;
-        public                   Iff       Iff { private get; set; }
-        private                  Radar     _radar;
+        private Radar     _radar;
+        private Transform _target;
+        private Iff    _iff;
 
         private void Start()
         {
-            _radar                     =  GetComponent<Radar>();
-            _radar.RadarTargetsUpdated += EvaluateRadarTargets;
+            _radar=GetComponent<Radar>();
+            _iff=GetComponent<HealthManager>().Iff;
             if (!_radar)
             {
-                Debug.LogError("MissileGuidance requires a Radar component.");
+                Debug.LogError("EnemyBrain requires a Radar component.");
                 return;
             }
-
-            _radar.StartScan();
+            _radar.RadarTargetsUpdated += EvaluateRadarTargets;
         }
-
 
         private void EvaluateRadarTargets(TargetsStruct[] targets)
         {
@@ -38,13 +31,13 @@ namespace Weapons.GuidedMissile
             foreach (var hit in targets)
             {
                 var targetIff = hit.Iff;
-                if (!Iff.CanTargetIff(targetIff))
+                if (!_iff.CanTargetIff(targetIff))
                 {
                     continue;
                 }
 
-                var   missilePos = transform.position;
-                float distance   = Vector2.SqrMagnitude(hit.Target.position - missilePos);
+                var   enemyPos = transform.position;
+                float distance = Vector2.SqrMagnitude(hit.Target.position - enemyPos);
                 if (distance < minDistance)
                 {
                     minDistance   = distance;
@@ -55,44 +48,38 @@ namespace Weapons.GuidedMissile
             if (closestTarget)
             {
                 _target = closestTarget;
+                Debug.Log("Found target", _target);
                 _radar.StopScan();
             }
         }
 
         private void Update()
         {
+            Move();
+            if(!_target && !_radar.IsScanning)
+            {
+                _radar.StartScan();
+            }
+        }
+
+        private void Move()
+        {
             if (HasObstacleInFront())
             {
                 // Move in a random direction
                 var randomDirection = Random.insideUnitCircle.normalized;
                 transform.Rotate(Vector3.forward,
-                                 Vector2.SignedAngle(Vector2.up, randomDirection) * turnSpeed * Time.deltaTime);
+                                 Vector2.SignedAngle(Vector2.up, randomDirection) * 100 * Time.deltaTime);
             }
             else if (_target)
             {
-                // Move towards the target
                 RotateToTarget();
-            }
-            if(!_radar.IsScanning && !_target)
-            {
-                _radar.StartScan();
-            }
-
-            transform.Translate(transform.up * (Time.deltaTime * speed), Space.World);
-            CheckLifeTime();
-        }
-
-        private void OnDestroy()
-        {
-            if (_radar)
-            {
-                _radar.RadarTargetsUpdated -= EvaluateRadarTargets;
+                transform.Translate(transform.up * (5 * Time.deltaTime), Space.World);
             }
         }
-
         private bool HasObstacleInFront()
         {
-            var hit = Physics2D.Raycast(transform.position, transform.up, speed * 0.5f, LayerMask.GetMask("Player"));
+            var hit = Physics2D.Raycast(transform.position, transform.up, 10 * 0.5f, LayerMask.GetMask("Player"));
             if (hit.collider)
             {
                 Debug.DrawLine(transform.position, hit.point, Color.green, 1f);
@@ -102,22 +89,12 @@ namespace Weapons.GuidedMissile
 
             return false;
         }
-
-        private void CheckLifeTime()
-        {
-            lifeTime -= Time.deltaTime;
-            if (lifeTime <= 0)
-            {
-                Destroy(gameObject);
-            }
-        }
-
         private void RotateToTarget()
         {
             Vector2 direction = _target.position - transform.position;
             direction.Normalize();
             var   angle          = Vector2.SignedAngle(transform.up, direction);
-            float rotationAmount = Mathf.Sign(angle) * turnSpeed * Time.deltaTime;
+            float rotationAmount = Mathf.Sign(angle) * 100 * Time.deltaTime;
 
             // Limita la rotazione alla quantità di angolo rimanente (evita oscillazioni)
             if (Mathf.Abs(rotationAmount) > Mathf.Abs(angle))
