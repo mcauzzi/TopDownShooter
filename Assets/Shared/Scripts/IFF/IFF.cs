@@ -1,4 +1,4 @@
-namespace SharedScripts.IFF
+namespace Shared.Scripts.IFF
 {
     public enum Iff{
         None     =0,

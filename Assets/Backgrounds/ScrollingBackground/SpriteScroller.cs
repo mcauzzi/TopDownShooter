@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Backgrounds
+namespace Backgrounds.ScrollingBackground
 {
     public class SpriteScroller : MonoBehaviour
     {

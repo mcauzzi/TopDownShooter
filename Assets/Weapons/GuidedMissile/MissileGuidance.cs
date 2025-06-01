@@ -1,6 +1,6 @@
 using System.Collections;
-using SharedScripts;
-using SharedScripts.IFF;
+using Shared.Scripts.IFF;
+using ShipParts.Radar;
 using UnityEngine;
 
 namespace Weapons.GuidedMissile
@@ -10,89 +10,74 @@ namespace Weapons.GuidedMissile
         [SerializeField] private float speed     = 10f;
         [SerializeField] private float turnSpeed = 5f;
 
-        [SerializeField] private float lifeTime = 5f;
-
-        [Tooltip("Lock on scan interval in milliseconds")] [Header("Scan Settings")] [SerializeField]
-        private int scanInterval = 200;
-
-        [SerializeField] private float scanRange = 10f;
-        [SerializeField] private float scanAngle = 45f;
-
-
-        private Coroutine lockOnRoutine;
-        private bool      _lockedOn = false;
-        private Transform _target;
-        public  Iff       Iff { private get; set; }
-
-
+        [SerializeField] private float     lifeTime = 5f;
+        private                  Radar     _radar;
+        private                  Coroutine _radarCheckRoutine;
+        private                  Transform _target;
+        public                   Iff       Iff        { private get; set; }
         private void Start()
         {
-            _lockedOn     = false;
-            _target       = null;
-            lockOnRoutine = StartCoroutine(LockOnTarget());
+            _radar = GetComponent<Radar>();
+            if (!_radar)
+            {
+                Debug.LogError("MissileGuidance requires a Radar component.");
+                return;
+            }
+
+            _radar.StartScan();
+            _radarCheckRoutine = StartCoroutine(CheckRadarTargets());
         }
 
-        private IEnumerator LockOnTarget()
+        private IEnumerator CheckRadarTargets()
         {
-            while (!_lockedOn)
+            while (true)
             {
-                var possibleTargets = Physics2D.OverlapCircleAll(transform.position, scanRange);
-                if (possibleTargets.Length > 0)
+                if (_radar.HasTargets)
                 {
-                    var closestTarget = GetClosestTarget(possibleTargets);
-
-                    _target = closestTarget;
-                    if (_target)
-                    {
-                        _lockedOn     = true;
-                        lockOnRoutine = null;
-                        yield break;
-                    }
+                    EvaluateRadarTargets();
                 }
 
-                yield return new WaitForSeconds(scanInterval / 1000f);
+                if (!_target && !_radar.RadarEnabled)
+                {
+                    _radar.StartScan();
+                }
+
+                yield return new WaitForSeconds(0.1f); // Adjust the frequency of checks as needed
             }
         }
 
-        private Transform GetClosestTarget(Collider2D[] possibleTargets)
+        private void EvaluateRadarTargets()
         {
+            Debug.Log("Radar has targets, evaluating...");
+            var       minDistance   = float.MaxValue;
             Transform closestTarget = null;
-            float     minDistance   = float.MaxValue;
-            Vector3   missilePos    = transform.position;
-            Vector2   missileUp     = transform.up;
-
-            foreach (var hit in possibleTargets)
+            foreach (var hit in _radar.Targets)
             {
-                var targetIff = hit.GetComponent<HealthManager>()?.Iff ?? Iff.None;
+                var targetIff = hit.Iff;
                 if (!Iff.CanTargetIff(targetIff))
                 {
                     continue;
                 }
 
-                Transform targetTransform   = hit.transform;
-                Vector2   directionToTarget = (targetTransform.position - missilePos).normalized;
-
-                if (Vector2.Angle(missileUp, directionToTarget) <= scanAngle)
+                var   missilePos = transform.position;
+                float distance   = Vector2.SqrMagnitude(hit.Target.position - missilePos);
+                if (distance < minDistance)
                 {
-                    float distance = Vector2.SqrMagnitude(targetTransform.position - missilePos);
-                    if (distance < minDistance)
-                    {
-                        minDistance   = distance;
-                        closestTarget = targetTransform;
-                    }
+                    minDistance   = distance;
+                    closestTarget = hit.Target;
                 }
             }
 
-            return closestTarget;
+            if (closestTarget)
+            {
+                Debug.Log($"Closest target found: {closestTarget.name} at distance {Mathf.Sqrt(minDistance)}");
+                _target = closestTarget;
+                _radar.StopScan();
+            }
         }
 
         private void Update()
         {
-            if (!_target)
-            {
-                RestartTargetScan();
-            }
-
             if (HasObstacleInFront())
             {
                 // Move in a random direction
@@ -100,7 +85,7 @@ namespace Weapons.GuidedMissile
                 transform.Rotate(Vector3.forward,
                                  Vector2.SignedAngle(Vector2.up, randomDirection) * turnSpeed * Time.deltaTime);
             }
-            else if (_lockedOn)
+            else if (_target)
             {
                 // Move towards the target
                 RotateToTarget();
@@ -132,26 +117,17 @@ namespace Weapons.GuidedMissile
             }
         }
 
-        private void RestartTargetScan()
-        {
-            _lockedOn = false;
-            if (lockOnRoutine == null)
-            {
-                lockOnRoutine = StartCoroutine(LockOnTarget());
-            }
-        }
-
         private void RotateToTarget()
         {
             Vector2 direction = _target.position - transform.position;
             direction.Normalize();
             var   angle          = Vector2.SignedAngle(transform.up, direction);
             float rotationAmount = Mathf.Sign(angle) * turnSpeed * Time.deltaTime;
-    
+
             // Limita la rotazione alla quantità di angolo rimanente (evita oscillazioni)
             if (Mathf.Abs(rotationAmount) > Mathf.Abs(angle))
                 rotationAmount = angle;
-        
+
             transform.Rotate(Vector3.forward, rotationAmount);
         }
     }

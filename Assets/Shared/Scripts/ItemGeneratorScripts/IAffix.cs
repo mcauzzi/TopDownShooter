@@ -1,4 +1,4 @@
-namespace SharedScripts.ItemGeneratorScripts
+namespace Shared.Scripts.ItemGeneratorScripts
 {
     public interface IAffix<T> where T : struct
     {

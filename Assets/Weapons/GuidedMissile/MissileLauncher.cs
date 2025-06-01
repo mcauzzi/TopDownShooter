@@ -1,5 +1,5 @@
-using SharedScripts;
-using SharedScripts.IFF;
+using Shared.Scripts;
+using Shared.Scripts.IFF;
 using UnityEngine;
 using UnityEngine.UI;
 

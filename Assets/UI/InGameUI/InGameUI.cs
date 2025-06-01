@@ -1,11 +1,11 @@
 using System.Globalization;
 using System.Linq;
-using SharedScripts;
+using Shared.Scripts;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace UI
+namespace UI.InGameUI
 {
     public class InGameUI : MonoBehaviour
     {

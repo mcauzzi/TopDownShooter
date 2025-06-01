@@ -31,12 +31,10 @@ namespace Player.Scripts
         {
             if (_inputValue.x < 0)
             { 
-                Debug.Log("Rotate Right");
                 _rigidBody.MoveRotation(_rigidBody.rotation+engineStats.RotationSpeed * Time.deltaTime);
             }
             else if (_inputValue.x > 0)
             {
-                Debug.Log("Rotate left");
                 _rigidBody.MoveRotation(_rigidBody.rotation-engineStats.RotationSpeed * Time.deltaTime);
             }
         }

@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Weapons;
 
-namespace SharedScripts
+namespace Shared.Scripts
 {
     public class WeaponAutoFire : MonoBehaviour
     {

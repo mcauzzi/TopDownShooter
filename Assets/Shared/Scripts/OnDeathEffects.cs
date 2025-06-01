@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace SharedScripts
+namespace Shared.Scripts
 {
     public class OnDeathEffects:MonoBehaviour
     {

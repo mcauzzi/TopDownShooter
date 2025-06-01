@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace SharedScripts
+namespace Shared.Scripts
 {
     public static class GameObjectHelpers
     {

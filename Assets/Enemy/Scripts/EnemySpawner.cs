@@ -1,6 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
-using SharedScripts;
+using Shared.Scripts;
 using UnityEngine;
 
 namespace Enemy.Scripts
@@ -32,9 +32,7 @@ namespace Enemy.Scripts
             for (var i = 0; i < waveConfig.EnemyCount; i++)
             {
                 var enemyPrefab = waveConfig.GetEnemyPrefab(i);
-                var spawnPoint  = waveConfig.GetStartingPoint();
-                var enemy       = Instantiate(enemyPrefab, spawnPoint.position,enemyPrefab.transform.rotation, transform);
-                AssignPath(waveConfig, enemy);
+                var enemy       = Instantiate(enemyPrefab,transform.position,enemyPrefab.transform.rotation, transform);
                 AssignWeapon(waveConfig,enemy);
                 yield return new WaitForSeconds(waveConfig.GetEnemyInterval());
             }
@@ -67,12 +65,6 @@ namespace Enemy.Scripts
                 Debug.LogWarning($"No WeaponAutoFire component found on {enemy.name}");
             }
         
-        }
-
-        private static void AssignPath(WaveConfigSO waveConfig, GameObject enemy)
-        {
-            var pathfinder  = enemy.GetComponent<Pathfinder>();
-            pathfinder.WaveConfig = waveConfig;
         }
     }
 }

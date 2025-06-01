@@ -1,6 +1,6 @@
 using System;
 
-namespace SharedScripts.ItemGeneratorScripts
+namespace Shared.Scripts.ItemGeneratorScripts
 {
     public struct FirePower : IAffix<Range<int>>
     {

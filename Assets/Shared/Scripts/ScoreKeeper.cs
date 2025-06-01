@@ -1,7 +1,6 @@
-using System;
 using UnityEngine;
 
-namespace SharedScripts
+namespace Shared.Scripts
 {
     public class ScoreKeeper : MonoBehaviour
     {

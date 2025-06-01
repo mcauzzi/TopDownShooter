@@ -1,5 +1,5 @@
 using System;
-using SharedScripts;
+using Shared.Scripts;
 using TMPro;
 using UnityEngine;
 

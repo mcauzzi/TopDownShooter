@@ -1,4 +1,4 @@
-using SharedScripts;
+using Shared.Scripts;
 using UnityEngine;
 
 namespace Weapons

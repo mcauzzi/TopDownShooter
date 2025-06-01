@@ -1,4 +1,4 @@
-using SharedScripts.ItemGeneratorScripts;
+using Shared.Scripts.ItemGeneratorScripts;
 using UnityEngine;
 
 namespace Weapons.GuidedMissile

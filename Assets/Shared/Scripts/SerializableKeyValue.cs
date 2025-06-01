@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace SharedScripts
+namespace Shared.Scripts
 {
     [Serializable]
     public record SerializableKeyValue<TKey, T>

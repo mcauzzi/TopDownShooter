@@ -1,7 +1,7 @@
 using System;
 using Random = System.Random;
 
-namespace SharedScripts.ItemGeneratorScripts
+namespace Shared.Scripts.ItemGeneratorScripts
 {
     public struct AdditionalFireRatePercentage : IAffix<int>
     {

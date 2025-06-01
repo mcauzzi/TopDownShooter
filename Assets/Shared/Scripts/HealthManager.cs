@@ -1,8 +1,8 @@
 using Scenes.ManagementScripts;
-using SharedScripts.IFF;
+using Shared.Scripts.IFF;
 using UnityEngine;
 
-namespace SharedScripts
+namespace Shared.Scripts
 {
     public class HealthManager : MonoBehaviour
     {

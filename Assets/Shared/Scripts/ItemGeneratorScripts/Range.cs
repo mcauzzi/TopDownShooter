@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-namespace SharedScripts.ItemGeneratorScripts
+namespace Shared.Scripts.ItemGeneratorScripts
 {
     [Serializable]
     public struct Range<T> where T : struct

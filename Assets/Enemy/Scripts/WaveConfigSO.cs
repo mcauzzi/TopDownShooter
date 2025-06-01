@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using SharedScripts;
+using Shared.Scripts;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -11,7 +11,6 @@ namespace Enemy.Scripts
     public class WaveConfigSO : ScriptableObject
     {
         [SerializeField] private List<GameObject> enemyPrefabs;
-        [SerializeField] private Transform        pathPrefab;
         [SerializeField] private float            moveSpeed = 5f;
 
         [SerializeField] public  float enemyInterval         = 1f;
@@ -36,11 +35,6 @@ namespace Enemy.Scripts
             _totalWeight = weaponWeights.Sum(x => x.Value);
         }
 
-        public Transform GetStartingPoint()
-        {
-            return pathPrefab.GetChild(0);
-        }
-
         public int WeaponsTotalWeight => _totalWeight;
 
         public int EnemyCount => enemyPrefabs.Count;
@@ -48,11 +42,6 @@ namespace Enemy.Scripts
         public GameObject GetEnemyPrefab(int index)
         {
             return enemyPrefabs[index];
-        }
-
-        public List<Transform> GetWaypoints()
-        {
-            return pathPrefab.Cast<Transform>().ToList();
         }
 
         public float GetEnemyInterval()
