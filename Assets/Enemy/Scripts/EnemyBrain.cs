@@ -1,6 +1,6 @@
-
 using Shared.Scripts;
 using Shared.Scripts.IFF;
+using ShipParts.Engines;
 using ShipParts.Radar;
 using UnityEngine;
 
@@ -8,19 +8,22 @@ namespace Enemy.Scripts
 {
     public class EnemyBrain : MonoBehaviour
     {
-        private Radar     _radar;
-        private Transform _target;
-        private Iff    _iff;
+        private Radar            _radar;
+        private Transform        _target;
+        private Iff              _iff;
+        private EngineController _engine;
 
         private void Start()
         {
-            _radar=GetComponent<Radar>();
-            _iff=GetComponent<HealthManager>().Iff;
+            _radar  = GetComponent<Radar>();
+            _iff    = GetComponent<HealthManager>().Iff;
+            _engine = GetComponentInChildren<EngineController>();
             if (!_radar)
             {
                 Debug.LogError("EnemyBrain requires a Radar component.");
                 return;
             }
+
             _radar.RadarTargetsUpdated += EvaluateRadarTargets;
         }
 
@@ -56,7 +59,7 @@ namespace Enemy.Scripts
         private void Update()
         {
             Move();
-            if(!_target && !_radar.IsScanning)
+            if (!_target && !_radar.IsScanning)
             {
                 _radar.StartScan();
             }
@@ -68,39 +71,49 @@ namespace Enemy.Scripts
             {
                 // Move in a random direction
                 var randomDirection = Random.insideUnitCircle.normalized;
-                transform.Rotate(Vector3.forward,
-                                 Vector2.SignedAngle(Vector2.up, randomDirection) * 100 * Time.deltaTime);
+                var angle           = Vector2.SignedAngle(transform.up, randomDirection);
+                if (angle < 0f)
+                {
+                    _engine.Status = EngineStatus.RotatingRight | EngineStatus.Accelerating;
+                }
+                else if (angle > 0f)
+                {
+                    _engine.Status = EngineStatus.RotatingLeft | EngineStatus.Accelerating;
+                }
+                return;
             }
-            else if (_target)
+            if (_target)
             {
                 RotateToTarget();
-                transform.Translate(transform.up * (5 * Time.deltaTime), Space.World);
             }
+            _engine.Status |= EngineStatus.Accelerating;
         }
+
         private bool HasObstacleInFront()
         {
             var hit = Physics2D.Raycast(transform.position, transform.up, 10 * 0.5f, LayerMask.GetMask("Player"));
             if (hit.collider)
             {
                 Debug.DrawLine(transform.position, hit.point, Color.green, 1f);
-
                 return true;
             }
 
             return false;
         }
+
         private void RotateToTarget()
         {
             Vector2 direction = _target.position - transform.position;
             direction.Normalize();
-            var   angle          = Vector2.SignedAngle(transform.up, direction);
-            float rotationAmount = Mathf.Sign(angle) * 100 * Time.deltaTime;
-
-            // Limita la rotazione alla quantità di angolo rimanente (evita oscillazioni)
-            if (Mathf.Abs(rotationAmount) > Mathf.Abs(angle))
-                rotationAmount = angle;
-
-            transform.Rotate(Vector3.forward, rotationAmount);
+            var angle = Vector2.SignedAngle(transform.up, direction);
+            if (angle < 0f)
+            {
+                _engine.Status = EngineStatus.RotatingRight;
+            }
+            else if (angle > 0 + Mathf.Epsilon)
+            {
+                _engine.Status= EngineStatus.RotatingLeft;
+            }
         }
     }
 }

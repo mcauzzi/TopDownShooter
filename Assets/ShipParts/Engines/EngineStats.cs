@@ -9,7 +9,7 @@ namespace ShipParts.Engines
         [field:SerializeField]
         public float MaxSpeed { get; set; }
         [field:SerializeField]
-        public float Acceleration{get;set;}
+        public float Power{get;set;}
         [field:SerializeField]
         public float RotationSpeed { get; set; }
     }
@@ -22,5 +22,7 @@ namespace ShipParts.Engines
         Decelerating=1<<1,
         RotatingLeft=1<<2,
         RotatingRight=1<<3,
+        
+        
     }
 }

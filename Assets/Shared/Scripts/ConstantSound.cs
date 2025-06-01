@@ -16,16 +16,19 @@ namespace Shared.Scripts
             _audioSource.playOnAwake = false;
             _audioSource.volume      = volume; // Set volume to a default value, can be adjusted later
             _audioSource.clip        = clip;
-            _audioSource.Play();
         }
 
-        // Update is called once per frame
-        // void Update()
-        // {
-        //     if (clip)
-        //     {
-        //         if(clip.)
-        //     }
-        // }
+        public void PlaySound()
+        {
+            if (_audioSource.isPlaying) return; // Prevent playing if already playing
+            _audioSource.Play();
+        }
+        
+        public void StopSound()
+        {
+            if (!_audioSource.isPlaying) return;
+            _audioSource.Stop();
+        }
+
     }
 }
