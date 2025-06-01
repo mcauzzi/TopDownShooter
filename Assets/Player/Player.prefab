@@ -403,6 +403,7 @@ GameObject:
   - component: {fileID: 1312693303021354086}
   - component: {fileID: 6206754345870861102}
   - component: {fileID: 3114090809361737305}
+  - component: {fileID: 6906938031362779050}
   m_Layer: 3
   m_Name: Engine
   m_TagString: Untagged
@@ -516,6 +517,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   clip: {fileID: 8300000, guid: 3ddbef554e9df674d8c48ffd9ae2b648, type: 3}
   volume: 0.153
+--- !u!114 &6906938031362779050
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8542668415243121160}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5fd8be7fca74a7ba8b8b00a7e360a72, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  engineStats:
+    <MaxSpeed>k__BackingField: 10
+    <Acceleration>k__BackingField: 100
+    <RotationSpeed>k__BackingField: 100
 --- !u!1001 &92483702739391403
 PrefabInstance:
   m_ObjectHideFlags: 0
