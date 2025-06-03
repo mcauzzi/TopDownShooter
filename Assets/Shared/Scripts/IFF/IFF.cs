@@ -10,7 +10,10 @@ namespace Shared.Scripts.IFF
 
     public static class IffHelpers
     {
-        public static bool CanTargetIff(this Iff shooterIff,Iff targetIff){
+        public static bool CanTargetIff(this Iff shooterIff,Iff? targetIff){
+            if(targetIff==null){
+                return false;
+            }
             if(shooterIff==Iff.Everyone){
                 return true;
             }

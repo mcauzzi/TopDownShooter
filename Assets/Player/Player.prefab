@@ -518,6 +518,10 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7923384693522396713, guid: a2be4af6548a09145a2e16c5c7d3a7bc, type: 3}
+      propertyPath: missilePrefab
+      value: 
+      objectReference: {fileID: 1615631701252256547, guid: d0f4d060a9b0b11429fdf6912f9c8168, type: 3}
+    - target: {fileID: 7923384693522396713, guid: a2be4af6548a09145a2e16c5c7d3a7bc, type: 3}
       propertyPath: <AmmoIconPrefab>k__BackingField
       value: 
       objectReference: {fileID: 5256758283743951438, guid: bf7291079595d314ab576e885282f889, type: 3}
@@ -679,11 +683,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 500552759919566618, guid: a2be4af6548a09145a2e16c5c7d3a7bc, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.259
+      value: 0.25
       objectReference: {fileID: 0}
     - target: {fileID: 500552759919566618, guid: a2be4af6548a09145a2e16c5c7d3a7bc, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.234
+      value: 0.24
       objectReference: {fileID: 0}
     - target: {fileID: 500552759919566618, guid: a2be4af6548a09145a2e16c5c7d3a7bc, type: 3}
       propertyPath: m_LocalPosition.z
@@ -725,6 +729,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 7923384693522396713, guid: a2be4af6548a09145a2e16c5c7d3a7bc, type: 3}
+      propertyPath: missilePrefab
+      value: 
+      objectReference: {fileID: 1615631701252256547, guid: d0f4d060a9b0b11429fdf6912f9c8168, type: 3}
     - target: {fileID: 7923384693522396713, guid: a2be4af6548a09145a2e16c5c7d3a7bc, type: 3}
       propertyPath: <AmmoIconPrefab>k__BackingField
       value: 

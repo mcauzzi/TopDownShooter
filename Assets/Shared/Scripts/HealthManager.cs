@@ -10,6 +10,7 @@ namespace Shared.Scripts
         public int Health { get; private set; }
         [SerializeField] private Iff  iff             = Iff.None;
         [SerializeField] private bool gameOverOnDeath = false;
+        [SerializeField] private bool invincible=false;
         #region Events
 
         public delegate void                 OnDeathDelegate();
@@ -22,6 +23,10 @@ namespace Shared.Scripts
         public Iff Iff=> iff;
         public void TakeDamage(int damage)
         {
+            if (invincible)
+            {
+                return;
+            }
             Health -= damage;
             OnHealthChanged?.Invoke(Health);
             if (Health <= 0)

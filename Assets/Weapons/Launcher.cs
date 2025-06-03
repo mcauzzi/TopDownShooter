@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using Weapons.Interfaces;
 
 namespace Weapons
 {
@@ -7,22 +8,27 @@ namespace Weapons
     {
         [SerializeField] private GameObject launchablePrefab;
         [SerializeField] private float      fireRate   = 1f;
-        private                  bool       _canFire;
-        private Coroutine firingRoutine;
-
+        private                  Coroutine  firingRoutine;
+        public                   float      Range { get; private set; }
+        public bool      IsFiring { get; private set; }
+        public void Start()
+        {
+            var bullet= launchablePrefab.GetComponent<IBullet>();
+            Range = bullet.Range;
+        }
         public void FireStart()
         {
             if(firingRoutine!=null)
             {
                 return;
             }
-            _canFire = true;
+            IsFiring = true;
             firingRoutine=StartCoroutine(Fire());
         }
 
         private IEnumerator Fire()
         {
-            while (_canFire)
+            while (IsFiring)
             {
                 var rocket = Instantiate(launchablePrefab, transform.position, transform.rotation);
                 yield return new WaitForSeconds(1 / fireRate);
@@ -32,7 +38,7 @@ namespace Weapons
 
         public void FireStop()
         {
-            _canFire = false;
+            IsFiring = false;
         }
         public string GetWeaponName()
         {

@@ -1,6 +1,7 @@
 using TMPro;
 using UnityEngine;
 using Weapons;
+using Weapons.Interfaces;
 
 namespace UI.AmmoUI
 {

@@ -1,21 +1,24 @@
 using System;
 using System.Collections;
+using Shared.Scripts;
 using Shared.Scripts.IFF;
 using ShipParts.Radar;
 using UnityEngine;
+using Weapons.Interfaces;
 using Random = UnityEngine.Random;
 
 namespace Weapons.GuidedMissile
 {
-    public class MissileGuidance : MonoBehaviour
+    public class MissileGuidance : MonoBehaviour, IBullet
     {
         [SerializeField] private float speed     = 10f;
         [SerializeField] private float turnSpeed = 5f;
-
+        
         [SerializeField] private float     lifeTime = 5f;
         private                  Transform _target;
         public                   Iff       Iff { private get; set; }
         private                  Radar     _radar;
+        public                   float     Range { get; private set; }
 
         private void Start()
         {
@@ -28,6 +31,7 @@ namespace Weapons.GuidedMissile
             }
 
             _radar.StartScan();
+            Range = speed * lifeTime;
         }
 
 
@@ -73,7 +77,8 @@ namespace Weapons.GuidedMissile
                 // Move towards the target
                 RotateToTarget();
             }
-            if(!_radar.IsScanning && !_target)
+
+            if (!_radar.IsScanning && !_target)
             {
                 _radar.StartScan();
             }
@@ -92,11 +97,10 @@ namespace Weapons.GuidedMissile
 
         private bool HasObstacleInFront()
         {
-            var hit = Physics2D.Raycast(transform.position, transform.up, speed * 0.5f, LayerMask.GetMask("Player"));
-            if (hit.collider)
+            var hit = Physics2D.Raycast(transform.position, transform.up, speed * 0.5f);
+            if (hit.collider && hit.collider.gameObject!=gameObject && !Iff.CanTargetIff(hit.collider.GetComponent<HealthManager>()?.Iff))
             {
-                Debug.DrawLine(transform.position, hit.point, Color.green, 1f);
-
+                Debug.Log($"Obstacle detected in front: {hit.collider.name}");
                 return true;
             }
 

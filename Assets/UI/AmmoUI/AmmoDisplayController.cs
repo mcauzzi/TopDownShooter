@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using Weapons;
+using Weapons.Interfaces;
 
 namespace UI.AmmoUI
 {

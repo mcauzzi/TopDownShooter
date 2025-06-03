@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Weapons;
+using Weapons.Interfaces;
 
 namespace Shared.Scripts
 {

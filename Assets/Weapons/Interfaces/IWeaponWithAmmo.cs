@@ -1,6 +1,6 @@
 using UnityEngine.UI;
 
-namespace Weapons
+namespace Weapons.Interfaces
 {
     public interface IWeaponWithAmmo : IWeapon
     {

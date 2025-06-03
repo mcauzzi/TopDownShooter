@@ -1,8 +1,11 @@
+using System.Linq;
 using Shared.Scripts;
 using Shared.Scripts.IFF;
 using ShipParts.Engines;
 using ShipParts.Radar;
 using UnityEngine;
+using Weapons;
+using Weapons.Interfaces;
 
 namespace Enemy.Scripts
 {
@@ -12,12 +15,16 @@ namespace Enemy.Scripts
         private Transform        _target;
         private Iff              _iff;
         private EngineController _engine;
-
+        private IWeapon[]        _weapons;
+        private float            _minWeaponRange;
+        
         private void Start()
         {
-            _radar  = GetComponent<Radar>();
-            _iff    = GetComponent<HealthManager>().Iff;
-            _engine = GetComponentInChildren<EngineController>();
+            _radar          = GetComponent<Radar>();
+            _iff            = GetComponent<HealthManager>().Iff;
+            _engine         = GetComponentInChildren<EngineController>();
+            _weapons        = GetComponentsInChildren<IWeapon>();
+            _minWeaponRange =_weapons.Length>0? _weapons.Select(x => x.Range).Min():0f;
             if (!_radar)
             {
                 Debug.LogError("EnemyBrain requires a Radar component.");
@@ -58,14 +65,32 @@ namespace Enemy.Scripts
 
         private void Update()
         {
-            Move();
+            var distanceToTarget =_target? Vector2.Distance(transform.position, _target.position):float.MaxValue;
+            Move(distanceToTarget);
+            FireWeapons(distanceToTarget);
             if (!_target && !_radar.IsScanning)
             {
                 _radar.StartScan();
             }
         }
 
-        private void Move()
+        private void FireWeapons(float distanceToTarget)
+        {
+            if (!_target) return;
+            for (int i = 0; i < _weapons.Length; i++)
+            {
+                if(_weapons[i].Range<= distanceToTarget && !_weapons[i].IsFiring)
+                {
+                    _weapons[i].FireStart();
+                }
+                else if (_weapons[i].Range > distanceToTarget && _weapons[i].IsFiring)
+                {
+                    _weapons[i].FireStop();
+                }
+            }
+        }
+
+        private void Move(float distanceToTarget)
         {
             if (HasObstacleInFront())
             {
@@ -85,8 +110,23 @@ namespace Enemy.Scripts
             if (_target)
             {
                 RotateToTarget();
+               
+                if (distanceToTarget < _minWeaponRange)
+                {
+                    // If the target is within the minimum weapon range, decelerate
+                    _engine.Status |= EngineStatus.Decelerating;
+                }
+                else
+                {
+                    // If the target is out of range, accelerate
+                    _engine.Status |= EngineStatus.Accelerating;
+                }
             }
-            _engine.Status |= EngineStatus.Accelerating;
+            else
+            {
+                _engine.Status |= EngineStatus.Accelerating;
+            }
+            
         }
 
         private bool HasObstacleInFront()
@@ -94,7 +134,6 @@ namespace Enemy.Scripts
             var hit = Physics2D.Raycast(transform.position, transform.up, 10 * 0.5f, LayerMask.GetMask("Player"));
             if (hit.collider)
             {
-                Debug.DrawLine(transform.position, hit.point, Color.green, 1f);
                 return true;
             }
 
